@@ -1,0 +1,9 @@
+@charset "utf-8";
+/* CSS Document */
+
+html *
+{
+   font-size: 1em !important;
+   color: #724 !important;
+   font-family: Arial !important;
+}
