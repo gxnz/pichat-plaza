@@ -18,6 +18,10 @@ import cherrypy
 from urllib import urlopen
 import hashlib
 import sqlite3
+import json
+import ChatHandler
+
+
 
 class MainApp(object):
 
@@ -51,30 +55,38 @@ class MainApp(object):
         
     @cherrypy.expose
     def login(self):
-        Page = open("loginscreen.html", "r")
+        Page = open("Login_v11/index.html", "r")
+
         return Page
+
 
     @cherrypy.expose
     def chat(self):
-        #print user
-        #print EncryptedSaltedPassword
-        username = cherrypy.session.get('username')
+
+        myusername = cherrypy.session.get('username')
         EncryptedSaltedPassword = cherrypy.session.get('encryptedsaltedpassword')
-        Page = urlopen("http://cs302.pythonanywhere.com/getList?username=" + username.lower() + "&password=" + EncryptedSaltedPassword).read()
+        Pageoriginal = urlopen("http://cs302.pythonanywhere.com/getList?username=" + myusername.lower() + "&password=" + EncryptedSaltedPassword + "&json=1").read()
         #Page += open("chat.html", "r")
+
+        PageDecoded = Pageoriginal.decode('utf-8')
+        json2 = json.loads(PageDecoded)
+
+
         conn = sqlite3.connect('onlineusers.db')
         c = conn.cursor()
-        self.create_table(c, conn)
-        for row in c.execute('SELECT * FROM onlineusers'):
-            print(row)
-        return Page
+        c.execute('CREATE TABLE IF NOT EXISTS stuffToPlot (username TEXT)')
 
-    def create_table(self, c, conn):
-        c.execute('CREATE TABLE IF NOT EXISTS stuffToPlot(user TEXT, status REAL)')
-        c.execute("INSERT INTO stuffToPlot VALUES('someone', 1)")
-        conn.commit()
-        #c.close()
-        #conn.close
+        for username in json2:
+            print json2[username]
+            print json2[username]["username"]
+
+            c.execute("INSERT INTO stuffToPlot VALUES (?)", (json2[username]["username"],))
+            conn.commit()
+
+        return PageDecoded
+
+
+
 
     @cherrypy.expose    
     def sum(self, a=0, b=0): #All inputs are strings by default
@@ -122,6 +134,47 @@ class MainApp(object):
     def encrypt_string(self, hash_string):
         sha_signature = hashlib.sha256(hash_string.encode()).hexdigest()
         return sha_signature
+
+    @cherrypy.expose
+    def css(self, filename):
+        f = open("Login_v11/css/" + filename, "r")
+        data = f.read()
+        print data
+        f.close()
+        #return correct mimetype
+        return data
+
+    @cherrypy.expose
+    def vendor(self, dir1, dir2, dir3, filename):
+        f = open("Login_v11/vendor/" + dir1+"/"+dir2+"/"+dir3+"/"+filename, "r")
+        data = f.read()
+        f.close()
+        #return correct mimetype
+        return data
+
+    @cherrypy.expose
+    def fonts(self, filename):
+        f = open("Login_v11/fonts/" + filename, "r")
+        data = f.read()
+        f.close()
+        #return correct mimetype
+        return data
+
+    @cherrypy.expose
+    def images(self, filename):
+        f = open("Login_v11/images/" + filename, "r")
+        data = f.read()
+        f.close()
+        #return correct mimetype
+        return data
+
+    @cherrypy.expose
+    def js(self, filename):
+        f = open("Login_v11/js/" + filename, "r")
+        data = f.read()
+        f.close()
+        #return correct mimetype
+        return data
           
 def runMainApp():
     # Create an instance of MainApp and tell Cherrypy to send all requests under / to it. (ie all of them)
