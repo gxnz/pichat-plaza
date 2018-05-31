@@ -1,0 +1,12 @@
+@font-face {
+	font-family: Corben;
+	src: local("Corben Regular"), local("Corben-Regular"), url(http://fonts.gstatic.com/s/corben/v11/LYjDdGzzklQtCMpNpwND.woff) format("woff");
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: Corben;
+	src: local("Corben"), url(http://fonts.gstatic.com/s/corben/v11/LYjAdGzzklQtCMpFHCZQqnos.woff) format("woff");
+	font-weight: 700;
+	font-style: normal;
+}
