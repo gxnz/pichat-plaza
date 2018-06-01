@@ -24,8 +24,34 @@ import sqlite3
 import json
 import mimetypes
 import os
-from bottle import route, run, template
+import threading
+from apscheduler.schedulers.background import BackgroundScheduler
+import sched, time
 
+class ResumableTimer():
+    @cherrypy.expose
+    def __init__(self, timeout, callback):
+        self.timeout = timeout
+        self.callback = callback
+        self.timer = threading.Timer(timeout, callback)
+        self.startTime = time.time()
+
+    @cherrypy.expose
+    def start(self):
+        self.timer.start()
+
+    @cherrypy.expose
+    def pause(self):
+        self.timer.cancel()
+        self.pauseTime = time.time()
+
+    @cherrypy.expose
+    def resume(self):
+        self.timer = threading.Timer(
+            self.timeout - (self.pauseTime - self.startTime),
+            self.callback)
+
+        self.timer.start()
 
 
 class MainApp(object):
@@ -34,7 +60,9 @@ class MainApp(object):
     _cp_config = {'tools.encode.on': True, 
                   'tools.encode.encoding': 'utf-8',
                   'tools.sessions.on' : 'True',
-                 }                 
+                 }
+
+
 
     # If they try somewhere we don't know, catch it here and send them to the right place.
     @cherrypy.expose
@@ -56,21 +84,36 @@ class MainApp(object):
 
 
     @cherrypy.expose
+    @cherrypy.tools.json_in()
+    def receiveMessage(self):
+        input_data = cherrypy.request.json
+        print "Message Received"
+        return 0
+
+
+    @cherrypy.expose
+    def ping(self,sender):
+        print "ping"
+        print sender
+        return '0'
+
+
+    @cherrypy.expose
     def chat(self):
 
         myusername = cherrypy.session.get('username')
         EncryptedSaltedPassword = cherrypy.session.get('encryptedsaltedpassword')
-        Page = urlopen("http://cs302.pythonanywhere.com/getList?username=" + myusername.lower() + "&password=" + EncryptedSaltedPassword + "&json=1").read()
+        OnlineUsersList = urlopen("http://cs302.pythonanywhere.com/getList?username=" + myusername.lower() + "&password=" + EncryptedSaltedPassword + "&json=1").read()
         Allusers = urlopen("http://cs302.pythonanywhere.com/listUsers").read()
         #Page += open("chat.html", "r")
 
-        jsonloaded = json.loads(Page)
+        jsonloaded = json.loads(OnlineUsersList)
         Allusers = Allusers.split(',')
 
         #os.remove("onlineusers.db")
         conn = sqlite3.connect('onlineusers.db')
         c = conn.cursor()
-        c.execute('CREATE TABLE IF NOT EXISTS stuffToPlot (username TEXT, ip REAL, location REAL, lastLogin REAL, port REAL, publicKey REAL, onlineStatus REAL)')
+        c.execute('CREATE TABLE IF NOT EXISTS stuffToPlot (username TEXT, ip REAL, location REAL, lastLogin REAL, port REAL, publicKey REAL, onlineStatus REAL, realname REAL)')
         c.execute('create unique index if not exists IndexUnique on stuffToPlot ( username )')
 
         for values in Allusers:
@@ -90,16 +133,28 @@ class MainApp(object):
             c.execute('''UPDATE stuffToPlot SET ip = ?, location = ?, lastLogin = ?, port = ?, publicKey = ?, onlineStatus = ? where username = ?''', (value['ip'], value['location'], value['lastLogin'], value['port'], value['publicKey'], 1, value['username']))
             conn.commit()
 
+        #initialising image
+        data_uri = open('resource/greendot.png', 'rb').read().encode('base64').replace('\n', '')
+        greendot = '<img src="data:image/png;base64,{0}">'.format(data_uri)
 
+        #extracts data from database to output
+        c.execute("select username, realname, onlineStatus from stuffToPlot")
+        Page = "<table>"
+        Page += "<tr><th>Client</th><th>Online</th></tr>"
+        for row in c.fetchall():
+            print row
+            if row[1] == None:
+                Page += "<tr><td>" + row[0] + "</td>"
+            else:
+                Page += "<tr><td>" + row[1] + "</td>"
+            if row[2] == 1.0:
+                Page += "<td>" + greendot + "</td></tr>"
+        Page += "</table>"
 
-        data = c.fetchall()
-        response = template('onlineusers.db', rows=data)
+        t = ResumableTimer(5, 'signin')
+        t.start()
 
-        data2 = c.fetchall()
-        response += template('onlineusers.db', rows=data2)
-
-        return response
-
+        return Page
 
 
     @cherrypy.expose
@@ -108,19 +163,29 @@ class MainApp(object):
         Page = open("Loginscreen.html", "r")
         return Page
 
+
+
     # LOGGING IN AND OUT
     @cherrypy.expose
     def signin(self, username=None, password=None):
+
+        print 'signing in'
         #Takes username and password, encrypts it, checks it, if successful, redirects to chat page, if not refreshes current page
         EncryptedSaltedPassword = self.encrypt_string(password.lower()+username.lower())
         error = self.authoriseUserLogin(username,EncryptedSaltedPassword)
 
         if (error == 0):
+
             cherrypy.session['username'] = username;
             cherrypy.session['encryptedsaltedpassword'] = EncryptedSaltedPassword;
             raise cherrypy.HTTPRedirect('/chat')
+
         else:
             raise cherrypy.HTTPRedirect('/index')
+
+
+
+
 
     @cherrypy.expose
     def signout(self):
