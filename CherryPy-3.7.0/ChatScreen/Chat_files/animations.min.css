@@ -1,0 +1,390 @@
+.bounce {
+	transform-origin: center bottom; animation-name: bounce;
+}
+.flash {
+	animation-name: flash;
+}
+.pulse {
+	animation-name: pulse;
+}
+.rubberBand {
+	animation-name: rubberBand;
+}
+.shake {
+	animation-name: shake;
+}
+.headShake {
+	animation-name: headShake; animation-timing-function: ease-in-out;
+}
+.swing {
+	transform-origin: center top; animation-name: swing;
+}
+.tada {
+	animation-name: tada;
+}
+.wobble {
+	animation-name: wobble;
+}
+.jello {
+	transform-origin: center 50%; animation-name: jello;
+}
+.bounceIn {
+	animation-name: bounceIn;
+}
+.bounceInDown {
+	animation-name: bounceInDown;
+}
+.bounceInLeft {
+	animation-name: bounceInLeft;
+}
+.bounceInRight {
+	animation-name: bounceInRight;
+}
+.bounceInUp {
+	animation-name: bounceInUp;
+}
+.fadeIn {
+	animation-name: fadeIn;
+}
+.fadeInDown {
+	animation-name: fadeInDown;
+}
+.fadeInLeft {
+	animation-name: fadeInLeft;
+}
+.fadeInRight {
+	animation-name: fadeInRight;
+}
+.fadeInUp {
+	animation-name: fadeInUp;
+}
+.lightSpeedIn {
+	animation-name: lightSpeedIn; animation-timing-function: ease-out;
+}
+.rotateIn {
+	animation-name: rotateIn;
+}
+.rotateInDownLeft {
+	animation-name: rotateInDownLeft;
+}
+.rotateInDownRight {
+	animation-name: rotateInDownRight;
+}
+.rotateInUpLeft {
+	animation-name: rotateInUpLeft;
+}
+.rotateInUpRight {
+	animation-name: rotateInUpRight;
+}
+.rollIn {
+	animation-name: rollIn;
+}
+.zoomIn {
+	animation-name: zoomIn;
+}
+.zoomInDown {
+	animation-name: zoomInDown;
+}
+.zoomInLeft {
+	animation-name: zoomInLeft;
+}
+.zoomInRight {
+	animation-name: zoomInRight;
+}
+.zoomInUp {
+	animation-name: zoomInUp;
+}
+.slideInDown {
+	animation-name: slideInDown;
+}
+.slideInLeft {
+	animation-name: slideInLeft;
+}
+.slideInRight {
+	animation-name: slideInRight;
+}
+.slideInUp {
+	animation-name: slideInUp;
+}
+.elementor-animation-grow {
+	transition-property: transform; transition-duration: 0.3s;
+}
+.elementor-animation-grow:active {
+	transform: scale(1.1);
+}
+.elementor-animation-grow:focus {
+	transform: scale(1.1);
+}
+.elementor-animation-grow:hover {
+	transform: scale(1.1);
+}
+.elementor-animation-shrink {
+	transition-property: transform; transition-duration: 0.3s;
+}
+.elementor-animation-shrink:active {
+	transform: scale(0.9);
+}
+.elementor-animation-shrink:focus {
+	transform: scale(0.9);
+}
+.elementor-animation-shrink:hover {
+	transform: scale(0.9);
+}
+.elementor-animation-pulse:active {
+	animation-name: elementor-animation-pulse; animation-duration: 1s; animation-timing-function: linear; animation-iteration-count: infinite;
+}
+.elementor-animation-pulse:focus {
+	animation-name: elementor-animation-pulse; animation-duration: 1s; animation-timing-function: linear; animation-iteration-count: infinite;
+}
+.elementor-animation-pulse:hover {
+	animation-name: elementor-animation-pulse; animation-duration: 1s; animation-timing-function: linear; animation-iteration-count: infinite;
+}
+.elementor-animation-pulse-grow:active {
+	animation-name: elementor-animation-pulse-grow; animation-duration: 0.3s; animation-timing-function: linear; animation-direction: alternate; animation-iteration-count: infinite;
+}
+.elementor-animation-pulse-grow:focus {
+	animation-name: elementor-animation-pulse-grow; animation-duration: 0.3s; animation-timing-function: linear; animation-direction: alternate; animation-iteration-count: infinite;
+}
+.elementor-animation-pulse-grow:hover {
+	animation-name: elementor-animation-pulse-grow; animation-duration: 0.3s; animation-timing-function: linear; animation-direction: alternate; animation-iteration-count: infinite;
+}
+.elementor-animation-pulse-shrink:active {
+	animation-name: elementor-animation-pulse-shrink; animation-duration: 0.3s; animation-timing-function: linear; animation-direction: alternate; animation-iteration-count: infinite;
+}
+.elementor-animation-pulse-shrink:focus {
+	animation-name: elementor-animation-pulse-shrink; animation-duration: 0.3s; animation-timing-function: linear; animation-direction: alternate; animation-iteration-count: infinite;
+}
+.elementor-animation-pulse-shrink:hover {
+	animation-name: elementor-animation-pulse-shrink; animation-duration: 0.3s; animation-timing-function: linear; animation-direction: alternate; animation-iteration-count: infinite;
+}
+.elementor-animation-push:active {
+	animation-name: elementor-animation-push; animation-duration: 0.3s; animation-timing-function: linear; animation-iteration-count: 1;
+}
+.elementor-animation-push:focus {
+	animation-name: elementor-animation-push; animation-duration: 0.3s; animation-timing-function: linear; animation-iteration-count: 1;
+}
+.elementor-animation-push:hover {
+	animation-name: elementor-animation-push; animation-duration: 0.3s; animation-timing-function: linear; animation-iteration-count: 1;
+}
+.elementor-animation-pop:active {
+	animation-name: elementor-animation-pop; animation-duration: 0.3s; animation-timing-function: linear; animation-iteration-count: 1;
+}
+.elementor-animation-pop:focus {
+	animation-name: elementor-animation-pop; animation-duration: 0.3s; animation-timing-function: linear; animation-iteration-count: 1;
+}
+.elementor-animation-pop:hover {
+	animation-name: elementor-animation-pop; animation-duration: 0.3s; animation-timing-function: linear; animation-iteration-count: 1;
+}
+.elementor-animation-bounce-in {
+	transition-duration: 0.5s;
+}
+.elementor-animation-bounce-in:active {
+	transform: scale(1.2); transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+}
+.elementor-animation-bounce-in:focus {
+	transform: scale(1.2); transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+}
+.elementor-animation-bounce-in:hover {
+	transform: scale(1.2); transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+}
+.elementor-animation-bounce-out {
+	transition-duration: 0.5s;
+}
+.elementor-animation-bounce-out:active {
+	transform: scale(0.8); transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+}
+.elementor-animation-bounce-out:focus {
+	transform: scale(0.8); transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+}
+.elementor-animation-bounce-out:hover {
+	transform: scale(0.8); transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+}
+.elementor-animation-rotate {
+	transition-property: transform; transition-duration: 0.3s;
+}
+.elementor-animation-rotate:active {
+	transform: rotate(4deg);
+}
+.elementor-animation-rotate:focus {
+	transform: rotate(4deg);
+}
+.elementor-animation-rotate:hover {
+	transform: rotate(4deg);
+}
+.elementor-animation-grow-rotate {
+	transition-property: transform; transition-duration: 0.3s;
+}
+.elementor-animation-grow-rotate:active {
+	transform: scale(1.1) rotate(4deg);
+}
+.elementor-animation-grow-rotate:focus {
+	transform: scale(1.1) rotate(4deg);
+}
+.elementor-animation-grow-rotate:hover {
+	transform: scale(1.1) rotate(4deg);
+}
+.elementor-animation-float {
+	transition-property: transform; transition-duration: 0.3s; transition-timing-function: ease-out;
+}
+.elementor-animation-float:active {
+	transform: translateY(-8px);
+}
+.elementor-animation-float:focus {
+	transform: translateY(-8px);
+}
+.elementor-animation-float:hover {
+	transform: translateY(-8px);
+}
+.elementor-animation-sink {
+	transition-property: transform; transition-duration: 0.3s; transition-timing-function: ease-out;
+}
+.elementor-animation-sink:active {
+	transform: translateY(8px);
+}
+.elementor-animation-sink:focus {
+	transform: translateY(8px);
+}
+.elementor-animation-sink:hover {
+	transform: translateY(8px);
+}
+.elementor-animation-bob:active {
+	animation:;
+}
+.elementor-animation-bob:focus {
+	animation:;
+}
+.elementor-animation-bob:hover {
+	animation:;
+}
+.elementor-animation-hang:active {
+	animation:;
+}
+.elementor-animation-hang:focus {
+	animation:;
+}
+.elementor-animation-hang:hover {
+	animation:;
+}
+.elementor-animation-skew {
+	transition-property: transform; transition-duration: 0.3s;
+}
+.elementor-animation-skew:active {
+	transform: skew(-10deg);
+}
+.elementor-animation-skew:focus {
+	transform: skew(-10deg);
+}
+.elementor-animation-skew:hover {
+	transform: skew(-10deg);
+}
+.elementor-animation-skew-forward {
+	transform-origin: 0% 100%; transition-property: transform; transition-duration: 0.3s;
+}
+.elementor-animation-skew-forward:active {
+	transform: skew(-10deg);
+}
+.elementor-animation-skew-forward:focus {
+	transform: skew(-10deg);
+}
+.elementor-animation-skew-forward:hover {
+	transform: skew(-10deg);
+}
+.elementor-animation-skew-backward {
+	transform-origin: 0% 100%; transition-property: transform; transition-duration: 0.3s;
+}
+.elementor-animation-skew-backward:active {
+	transform: skew(10deg);
+}
+.elementor-animation-skew-backward:focus {
+	transform: skew(10deg);
+}
+.elementor-animation-skew-backward:hover {
+	transform: skew(10deg);
+}
+.elementor-animation-wobble-vertical:active {
+	animation-name: elementor-animation-wobble-vertical; animation-duration: 1s; animation-timing-function: ease-in-out; animation-iteration-count: 1;
+}
+.elementor-animation-wobble-vertical:focus {
+	animation-name: elementor-animation-wobble-vertical; animation-duration: 1s; animation-timing-function: ease-in-out; animation-iteration-count: 1;
+}
+.elementor-animation-wobble-vertical:hover {
+	animation-name: elementor-animation-wobble-vertical; animation-duration: 1s; animation-timing-function: ease-in-out; animation-iteration-count: 1;
+}
+.elementor-animation-wobble-horizontal:active {
+	animation-name: elementor-animation-wobble-horizontal; animation-duration: 1s; animation-timing-function: ease-in-out; animation-iteration-count: 1;
+}
+.elementor-animation-wobble-horizontal:focus {
+	animation-name: elementor-animation-wobble-horizontal; animation-duration: 1s; animation-timing-function: ease-in-out; animation-iteration-count: 1;
+}
+.elementor-animation-wobble-horizontal:hover {
+	animation-name: elementor-animation-wobble-horizontal; animation-duration: 1s; animation-timing-function: ease-in-out; animation-iteration-count: 1;
+}
+.elementor-animation-wobble-to-bottom-right:active {
+	animation-name: elementor-animation-wobble-to-bottom-right; animation-duration: 1s; animation-timing-function: ease-in-out; animation-iteration-count: 1;
+}
+.elementor-animation-wobble-to-bottom-right:focus {
+	animation-name: elementor-animation-wobble-to-bottom-right; animation-duration: 1s; animation-timing-function: ease-in-out; animation-iteration-count: 1;
+}
+.elementor-animation-wobble-to-bottom-right:hover {
+	animation-name: elementor-animation-wobble-to-bottom-right; animation-duration: 1s; animation-timing-function: ease-in-out; animation-iteration-count: 1;
+}
+.elementor-animation-wobble-to-top-right:active {
+	animation-name: elementor-animation-wobble-to-top-right; animation-duration: 1s; animation-timing-function: ease-in-out; animation-iteration-count: 1;
+}
+.elementor-animation-wobble-to-top-right:focus {
+	animation-name: elementor-animation-wobble-to-top-right; animation-duration: 1s; animation-timing-function: ease-in-out; animation-iteration-count: 1;
+}
+.elementor-animation-wobble-to-top-right:hover {
+	animation-name: elementor-animation-wobble-to-top-right; animation-duration: 1s; animation-timing-function: ease-in-out; animation-iteration-count: 1;
+}
+.elementor-animation-wobble-top {
+	transform-origin: 0% 100%;
+}
+.elementor-animation-wobble-top:active {
+	animation-name: elementor-animation-wobble-top; animation-duration: 1s; animation-timing-function: ease-in-out; animation-iteration-count: 1;
+}
+.elementor-animation-wobble-top:focus {
+	animation-name: elementor-animation-wobble-top; animation-duration: 1s; animation-timing-function: ease-in-out; animation-iteration-count: 1;
+}
+.elementor-animation-wobble-top:hover {
+	animation-name: elementor-animation-wobble-top; animation-duration: 1s; animation-timing-function: ease-in-out; animation-iteration-count: 1;
+}
+.elementor-animation-wobble-bottom {
+	transform-origin: 100% 0%;
+}
+.elementor-animation-wobble-bottom:active {
+	animation-name: elementor-animation-wobble-bottom; animation-duration: 1s; animation-timing-function: ease-in-out; animation-iteration-count: 1;
+}
+.elementor-animation-wobble-bottom:focus {
+	animation-name: elementor-animation-wobble-bottom; animation-duration: 1s; animation-timing-function: ease-in-out; animation-iteration-count: 1;
+}
+.elementor-animation-wobble-bottom:hover {
+	animation-name: elementor-animation-wobble-bottom; animation-duration: 1s; animation-timing-function: ease-in-out; animation-iteration-count: 1;
+}
+.elementor-animation-wobble-skew:active {
+	animation-name: elementor-animation-wobble-skew; animation-duration: 1s; animation-timing-function: ease-in-out; animation-iteration-count: 1;
+}
+.elementor-animation-wobble-skew:focus {
+	animation-name: elementor-animation-wobble-skew; animation-duration: 1s; animation-timing-function: ease-in-out; animation-iteration-count: 1;
+}
+.elementor-animation-wobble-skew:hover {
+	animation-name: elementor-animation-wobble-skew; animation-duration: 1s; animation-timing-function: ease-in-out; animation-iteration-count: 1;
+}
+.elementor-animation-buzz:active {
+	animation-name: elementor-animation-buzz; animation-duration: 0.15s; animation-timing-function: linear; animation-iteration-count: infinite;
+}
+.elementor-animation-buzz:focus {
+	animation-name: elementor-animation-buzz; animation-duration: 0.15s; animation-timing-function: linear; animation-iteration-count: infinite;
+}
+.elementor-animation-buzz:hover {
+	animation-name: elementor-animation-buzz; animation-duration: 0.15s; animation-timing-function: linear; animation-iteration-count: infinite;
+}
+.elementor-animation-buzz-out:active {
+	animation-name: elementor-animation-buzz-out; animation-duration: 0.75s; animation-timing-function: linear; animation-iteration-count: 1;
+}
+.elementor-animation-buzz-out:focus {
+	animation-name: elementor-animation-buzz-out; animation-duration: 0.75s; animation-timing-function: linear; animation-iteration-count: 1;
+}
+.elementor-animation-buzz-out:hover {
+	animation-name: elementor-animation-buzz-out; animation-duration: 0.75s; animation-timing-function: linear; animation-iteration-count: 1;
+}

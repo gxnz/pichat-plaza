@@ -1,8 +1,8 @@
 .elementor-widget-heading.elementor-widget-heading .elementor-heading-title {
 	color: rgb(110, 193, 228);
 }
-.elementor-widget-heading .elementor-heading-title {
-	font-family: "Roboto", Sans-serif; font-weight: 600;
+.elementor-widget-heading .elementor-heading-titleelementor-heading-title {
+	font-family: "Raleway", Sans-serif; font-weight: 600;
 }
 .elementor-widget-image .widget-image-caption {
 	color: rgb(122, 122, 122); font-family: "Roboto", Sans-serif; font-weight: 400;
@@ -173,7 +173,7 @@
 	color: rgb(110, 193, 228);
 }
 .elementor-widget-theme-post-title .elementor-heading-title {
-	font-family: "Roboto", Sans-serif; font-weight: 600;
+	font-family: "Raleway", Sans-serif; font-weight: 600;
 }
 .elementor-widget-theme-post-excerpt .elementor-widget-container {
 	color: rgb(122, 122, 122); font-family: "Roboto", Sans-serif; font-weight: 400;
@@ -188,7 +188,7 @@
 	color: rgb(110, 193, 228);
 }
 .elementor-widget-theme-archive-title .elementor-heading-title {
-	font-family: "Roboto", Sans-serif; font-weight: 600;
+	font-family: "Raleway", Sans-serif; font-weight: 600;
 }
 .elementor-widget-archive-posts .elementor-post__title {
 	color: rgb(84, 89, 95); font-family: "Roboto", Sans-serif; font-weight: 600;
@@ -218,7 +218,7 @@
 	color: rgb(110, 193, 228);
 }
 .elementor-widget-theme-site-title .elementor-heading-title {
-	font-family: "Roboto", Sans-serif; font-weight: 600;
+	font-family: "Raleway", Sans-serif; font-weight: 600;
 }
 .elementor-widget-theme-site-logo .widget-image-caption {
 	color: rgb(122, 122, 122); font-family: "Roboto", Sans-serif; font-weight: 400;
