@@ -16,10 +16,10 @@ import mimetypes
 import os
 import threading
 from apscheduler.schedulers.background import BackgroundScheduler
-import sched, time
+import time
 import pandas as pd
 import socket
-from threading import Timer,Thread,Event
+
 from time import gmtime, strftime
 import urllib2
 import atexit
@@ -172,6 +172,7 @@ class MainApp(object):
 
     @cherrypy.expose
     def requestProfile(self, username):
+
         conn3 = sqlite3.connect('onlineusers.db')
         c3 = conn3.cursor()
         c3.execute("SELECT ip FROM stuffToPlot WHERE username = '%s'" % str(username))
@@ -192,31 +193,120 @@ class MainApp(object):
 
         url = 'http://' + str(ip) + ':' + str(port) + '/getProfile'
 
+        print "Retrieving profile from " + username
         try:
             returned = urllib2.Request(url, data, {'Content-Type':'application/json'})
             returned2 = urllib2.urlopen(returned).read()
 
-            file = open('ChatScreen/userprofiles/' + username + '.html', 'w+')
-            file.write(str(returned2))
-            file.close
+            # file = open('ChatScreen/userprofiles/' + username + '.html', 'w+')
+            # file.write(str(returned2))
+            # file.close
+            jn = json.loads(returned2)
+            conn4 = sqlite3.connect('ChatScreen/userprofiles/profiledatabase.db')
+            c4 = conn4.cursor()
+            c4.execute('CREATE TABLE IF NOT EXISTS profiledata (profile_username TEXT, lastUpdated REAL, fullname TEXT, position REAL, description TEXT, location TEXT, picture TEXT, encoding REAL, encryption REAL, decryptionKey REAL)')
+            c4.execute('create unique index if not exists UniqueIndex on profiledata ( profile_username )')
+            print jn
+            profile_username = None
+            lastUpdated = None
+            fullname = None
+            position = None
+            description = None
+            location = None
+            picture = None
+            encoding = None
+            encryption = None
+            decryptionKey = None
+            try:
+                profile_username = jn['profile_username']
+            except:
+                profile_username = username
+            try:
+                lastUpdated = jn['lastUpdated']
+            except:
+                pass
+            try:
+                fullname = jn['fullname']
+            except:
+                pass
+            try:
+                position = jn['position']
+            except:
+                pass
+            try:
+                description = jn['description']
+            except:
+                pass
+            try:
+                location = jn['location']
+            except:
+                pass
+            try:
+                picture = jn['picture']
+            except:
+                pass
+            try:
+                encoding = jn['encoding']
+            except:
+                pass
+            try:
+                encryption = jn['encryption']
+            except:
+                pass
+            try:
+                decryptionKey = jn['decryptionKey']
+            except:
+                pass
+            tuple = (profile_username, lastUpdated, fullname, position, description, location, picture, encoding, encryption, decryptionKey)
+            tuple2 = (
+            lastUpdated, fullname, position, description, location, picture, encoding, encryption,
+            decryptionKey, profile_username)
+            try:
+                c4.execute("INSERT INTO profiledata VALUES(?,?,?,?,?,?,?,?,?,?)", tuple)
+            except:
+                c4.execute("UPDATE profiledata SET lastUpdated = ?, fullname = ?, position = ?, description = ?, location = ?, picture = ?, encoding = ?, encryption = ?, decryptionKey = ? WHERE profile_username = ?", tuple2)
 
-        # jsonloaded = json.loads(returned2)
-        # conn4 = sqlite3.connect('ChatScreen/userprofiles/profiledatabase.db')
-        # c4 = conn4.cursor()
-        # c4.execute('CREATE TABLE IF NOT EXISTS profiledata (profile_username TEXT, lastUpdated REAL, fullname TEXT, position REAL, description TEXT, location TEXT, picture TEXT, encoding REAL, encryption REAL, decryptionKey)')
-        # c4.execute('create unique index if not exists UniqueIndex on profiledata ( profile_username )')
-        #
-        # for key, value in jsonloaded.items():
-        #     c4.execute('''UPDATE profiledata SET lastUpdated = ?, fullname = ?, position = ?, description = ?, location = ?, picture = ?, encoding = ?, encryption = ?, decryptionKey = ? where profile_username = ?''', (value['lastUpdated'], value['fullname'], value['position'], value['description'], value['location'], value['picture'], value['encoding'], value['encryption'], value['decryptionKey'], value['profile_username']))
+            conn4.commit()
 
+            c4.execute("select profile_username, lastUpdated, fullname, position, description, location, picture, encoding, encryption, decryptionKey from profiledata where profile_username = ?", (username,))
 
-            print "Retrieved profile from " + username
-        # conn4.commit()
-        # conn4.close()
+            html = "<html>"
+            for row in c4.fetchall():
+                if row[0]:
+                    html += "<br>" + "<b>UPI: </b>" + str(row[0])
+                if row[1]:
+                    html += "<br>" + "<b>Last Updated: </b>" + str(row[1])
+                if row[2]:
+                    html += "<br>" + "<b>Full Name: </b>" + str(row[2])
+                if row[3]:
+                    html += "<br>" + "<b>Position: </b>" + str(row[3])
+                if row[4]:
+                    html += "<br>" + "<b>Desciption: </b>" + str(row[4])
+                if row[5]:
+                    html += "<br>" + "<b>Location: </b>" + str(row[5])
+                if row[6]:
+                    html += "<br>" + "<b>Picture: </b>" + str(row[6])
+                if row[7]:
+                    html += "<br>" + "<b>Encoding: </b>" + str(row[7])
+                if row[8]:
+                    html += "<br>" + "<b>Encryption: </b>" + str(row[8])
+                if row[9]:
+                    html += "<br>" + "<b>Decryption Key: </b>" + str(row[9])
+
+            html += "</html>"
+
+            html = html.encode('utf-8')
+            html_file = open("ChatScreen/userprofiles/" + profile_username + ".html", "w+")
+            html_file.write(html)
+            html_file.close()
+
+            conn4.close()
+            print "Successfully retrieved profile from " + username
+
 
         except:
             print "Failed to retrieve profile from " + username
-            pass
+
 
 
 
@@ -388,7 +478,6 @@ class MainApp(object):
         print 'testprint'
 
 
-
     @cherrypy.expose
     def signin(self, username=None, password=None):
 
@@ -413,12 +502,25 @@ class MainApp(object):
             usernamestored = username
             global encryptedsaltedpasswordstored
             encryptedsaltedpasswordstored = EncryptedSaltedPassword
-
+            global out
+            out = 0
+            self.update()
             raise cherrypy.HTTPRedirect('/chat')
 
         else:
             raise cherrypy.HTTPRedirect('/index')
 
+    @cherrypy.expose
+    def update(self):
+        if out == 1:
+            print "returning"
+            return
+        else:
+            username = usernamestored
+            EncryptedSaltedPassword = encryptedsaltedpasswordstored
+            self.authoriseUserLogin(username, EncryptedSaltedPassword)
+            threading.Timer(60.0, self.update).start()
+            print "Re-Reported to login server"
 
     @cherrypy.expose
     def signout(self):
@@ -427,8 +529,12 @@ class MainApp(object):
         EncryptedSaltedPassword = cherrypy.session.get('encryptedsaltedpassword')
         Page = urlopen("http://cs302.pythonanywhere.com/logoff?username=" + username.lower() + "&password=" + EncryptedSaltedPassword).read()
         cherrypy.lib.sessions.expire()
-        usernamestored
-        encryptedsaltedpasswordstored
+        global usernamestored
+        usernamestored = None
+        global encryptedsaltedpasswordstored
+        encryptedsaltedpasswordstored = None
+        global out
+        out = 1
 
         try:
             os.remove("ChatScreen/Chat_files/onlinetable.html")
