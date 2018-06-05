@@ -36,25 +36,8 @@ ip = socket.gethostbyname(socket.gethostname())
 print "IP Detected as " + ip
 listen_ip = ip
 myIP = ip
-myIP = "222.155.40.199"
+#myIP = "222.155.40.199"
 
-class perpetualTimer():
-
-   def __init__(self,t,hFunction):
-      self.t=t
-      self.hFunction = hFunction
-      self.thread = Timer(self.t,self.handle_function)
-
-   def handle_function(self):
-      self.hFunction()
-      self.thread = Timer(self.t,self.handle_function)
-      self.thread.start()
-
-   def start(self):
-      self.thread.start()
-
-   def cancel(self):
-      self.thread.cancel()
 
 
 class MainApp(object):
@@ -171,23 +154,37 @@ class MainApp(object):
         stamp = cherrypy.request.json['stamp']
 
     @cherrypy.expose
+    @cherrypy.tools.json_in()
     def getProfile(self, profile_username, sender):
         print profile_username + " is requesting the profile of " + sender
-        pass
+
+        file = open('ChatScreen/userprofiles/' + sender + '.html', 'w+').read
+        file = str(file)
+        file = json.dumps(file)
+
+        file.close
+        return file
+
+
+
+
+
 
     @cherrypy.expose
     def requestProfile(self, username):
-        conn2 = sqlite3.connect("onlineusers.db")
-        c2 = conn2.cursor()
-        c2.execute("SELECT ip FROM stuffToPlot WHERE username = '%s'" % str(username))
-        ipretrieve = c2.fetchall()
+        conn3 = sqlite3.connect('onlineusers.db')
+        c3 = conn3.cursor()
+        c3.execute("SELECT ip FROM stuffToPlot WHERE username = '%s'" % str(username))
+        ipretrieve = c3.fetchall()
         ip = str(ipretrieve[0][0].encode('utf-8'))
 
-        c2.execute("SELECT port FROM stuffToPlot WHERE username = '%s'" % str(username))
-        portretrieve = c2.fetchall()
+        c3.execute("SELECT port FROM stuffToPlot WHERE username = '%s'" % str(username))
+        portretrieve = c3.fetchall()
         port = str(int(portretrieve[0][0]))
         print ip
         print port
+
+        conn3.close()
 
         me = cherrypy.session.get('username')
         dict = {"profile_username": str(username), "sender": str(me)}
@@ -199,25 +196,28 @@ class MainApp(object):
             returned = urllib2.Request(url, data, {'Content-Type':'application/json'})
             returned2 = urllib2.urlopen(returned).read()
 
-            # file = open('ChatScreen/userprofiles/' + username + 'profile.html', 'w+')
-            # file.write(str(returned2))
-            # file.close
+            file = open('ChatScreen/userprofiles/' + username + '.html', 'w+')
+            file.write(str(returned2))
+            file.close
 
-            jsonloaded = json.loads(returned2)
+        # jsonloaded = json.loads(returned2)
+        # conn4 = sqlite3.connect('ChatScreen/userprofiles/profiledatabase.db')
+        # c4 = conn4.cursor()
+        # c4.execute('CREATE TABLE IF NOT EXISTS profiledata (profile_username TEXT, lastUpdated REAL, fullname TEXT, position REAL, description TEXT, location TEXT, picture TEXT, encoding REAL, encryption REAL, decryptionKey)')
+        # c4.execute('create unique index if not exists UniqueIndex on profiledata ( profile_username )')
+        #
+        # for key, value in jsonloaded.items():
+        #     c4.execute('''UPDATE profiledata SET lastUpdated = ?, fullname = ?, position = ?, description = ?, location = ?, picture = ?, encoding = ?, encryption = ?, decryptionKey = ? where profile_username = ?''', (value['lastUpdated'], value['fullname'], value['position'], value['description'], value['location'], value['picture'], value['encoding'], value['encryption'], value['decryptionKey'], value['profile_username']))
 
-            conn = sqlite3.connect('/ChatScreen/userprofiles/' + username + '.db')
-            c = conn.cursor()
-            c.execute('CREATE TABLE IF NOT EXISTS profiledata (lastUpdated REAL, fullname TEXT, position REAL, description TEXT, location TEXT, picture TEXT, encoding REAL, encryption REAL, decryptionKey)')
-
-            for key, value in jsonloaded.items():
-                c.execute('''UPDATE profiledata SET lastUpdated = ?, fullname = ?, position = ?, description = ?, location = ?, picture = ?, encoding = ?, encryption = ?, decryptionKey = ?''', (value['lastUpdated'], value['fullname'], value['position'], value['description'], value['location'], value['picture'], value['encoding'], value['encryption'], value['decryptionKey']))
-                conn.commit()
 
             print "Retrieved profile from " + username
-        except:
+        # conn4.commit()
+        # conn4.close()
 
+        except:
             print "Failed to retrieve profile from " + username
             pass
+
 
 
 
@@ -270,7 +270,7 @@ class MainApp(object):
         conn.close()
 
         cherrypy.session['notification'] = senderclient;
-        raise cherrypy.HTTPRedirect('/chat')
+        self.chat()
 
         return "0"
 
@@ -285,9 +285,12 @@ class MainApp(object):
     @cherrypy.expose
     def chat(self):
 
-        print cherrypy.session.get('username')
         myusername = cherrypy.session.get('username')
         EncryptedSaltedPassword = cherrypy.session.get('encryptedsaltedpassword')
+        if myusername == None:
+            myusername = usernamestored
+        if EncryptedSaltedPassword == None:
+            EncryptedSaltedPassword = encryptedsaltedpasswordstored
 
         OnlineUsersList = urlopen("http://cs302.pythonanywhere.com/getList?username=" + myusername.lower() + "&password=" + EncryptedSaltedPassword + "&json=1").read()
         Allusers = urlopen("http://cs302.pythonanywhere.com/listUsers").read()
@@ -331,14 +334,16 @@ class MainApp(object):
         history = '<img src="data:image/png;base64,{0}">'.format(data_uri_history)
         data_uri_notification = open('resource/notification.png', 'rb').read().encode('base64').replace('\n', '')
         notification = '<img src="data:image/png;base64,{0}">'.format(data_uri_notification)
+        data_uri_available = open('resource/available.png', 'rb').read().encode('base64').replace('\n', '')
+        available = '<img src="data:image/png;base64,{0}">'.format(data_uri_available)
 
         #extracts data from database to output
         c.execute("select username, realname, onlineStatus from stuffToPlot")
         Table = """<html><head></head>"""
         Table += """<div style="background: rgba(0, 0, 0, 0.15);"><bold><font color="white">"""
 
-        Table += """<body><table><col width="1"><col width="1">"""
-        Table += "<tr><th>Online</th><th>Status</th><th>Client</th></tr>"
+        Table += """<body><table><col width="1"><col width="1"><col width="1">"""
+        Table += "<tr><th>Online</th><th>Status</th><th>Profile</th><th>Client</th></tr>"
         for row in c.fetchall():
             if row[2] == 1.0:
                 Table += "<th>" + greendot + "</td>"
@@ -351,10 +356,14 @@ class MainApp(object):
                 Table += "<th>" + history + "</td>"
             else:
                 Table += "<th>" + nodot + "</td>"
-            if row[1] == None:
-                Table += """<td><a HREF="javascript:includeHTMLmessages('""" + row[0] + """.html')">""" + row[0] + "</td></tr>"
+            if (os.path.isfile("./ChatScreen/userprofiles/" + str(row[0]) + ".html") == True):
+                Table += "<th>" + available + "</td>"
             else:
-                Table += """<td><a HREF="javascript:includeHTMLmessages('""" + row[0] + """.html')">""" + row[1] + "</td></tr>"
+                Table += "<th>" + nodot + "</td>"
+            if row[1] == None:
+                Table += """<td><a HREF="javascript:includeHTMLmessages('""" + row[0] + """.html')">""" + row[0] + "</a></td></tr>"
+            else:
+                Table += """<td><a HREF="javascript:includeHTMLmessages('""" + row[0] + """.html')">""" + row[1] + "</a></td></tr>"
         Table += "</table></body>"
 
         Table += "</font></bold></div></html>"
@@ -379,6 +388,7 @@ class MainApp(object):
         print 'testprint'
 
 
+
     @cherrypy.expose
     def signin(self, username=None, password=None):
 
@@ -399,6 +409,11 @@ class MainApp(object):
 
             cherrypy.session['username'] = username;
             cherrypy.session['encryptedsaltedpassword'] = EncryptedSaltedPassword;
+            global usernamestored
+            usernamestored = username
+            global encryptedsaltedpasswordstored
+            encryptedsaltedpasswordstored = EncryptedSaltedPassword
+
             raise cherrypy.HTTPRedirect('/chat')
 
         else:
@@ -412,6 +427,9 @@ class MainApp(object):
         EncryptedSaltedPassword = cherrypy.session.get('encryptedsaltedpassword')
         Page = urlopen("http://cs302.pythonanywhere.com/logoff?username=" + username.lower() + "&password=" + EncryptedSaltedPassword).read()
         cherrypy.lib.sessions.expire()
+        usernamestored
+        encryptedsaltedpasswordstored
+
         try:
             os.remove("ChatScreen/Chat_files/onlinetable.html")
         except OSError:
@@ -459,14 +477,27 @@ class MainApp(object):
 
     @cherrypy.expose
     def usermessages(self, filename):
-        f = open("ChatScreen/usermessages/" + filename, "r")
-        data = f.read()
-        f.close()
-        # return correct mimetype
-        cherrypy.response.headers['Content-Type'] = mimetypes.guess_type(filename)[0]
-        return data
+        try:
+            f = open("ChatScreen/usermessages/" + filename, "r")
+            data = f.read()
+            f.close()
+            # return correct mimetype
+            cherrypy.response.headers['Content-Type'] = mimetypes.guess_type(filename)[0]
+            return data
+        except:
+            pass
 
-    atexit.register(signout)
+    @cherrypy.expose
+    def userprofiles(self, filename):
+        try:
+            f = open("ChatScreen/userprofiles/" + filename, "r")
+            data = f.read()
+            f.close()
+            # return correct mimetype
+            cherrypy.response.headers['Content-Type'] = mimetypes.guess_type(filename)[0]
+            return data
+        except:
+            pass
 
 def runMainApp():
     # Create an instance of MainApp and tell Cherrypy to send all requests under / to it. (ie all of them)

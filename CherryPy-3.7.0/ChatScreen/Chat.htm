@@ -14,7 +14,7 @@ type="application/rss+xml">
 			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56692,8205,9792,65039],[55357,56692,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
 		</SCRIPT>
 
-<script>
+<script language="JavaScript">
 function includeHTML() {
   var z, i, elmnt, file, xhttp;
   /*loop through a collection of all HTML elements:*/
@@ -31,8 +31,7 @@ function includeHTML() {
           if (this.status == 200) {elmnt.innerHTML = this.responseText;}
           if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
           /*remove the attribute, and call this function once more:*/
-          elmnt.removeAttribute("w3-include-html");
-          includeHTML();
+
         }
       }
       xhttp.open("GET", file, true);
@@ -48,6 +47,8 @@ function includeHTML() {
 
     <script language="JavaScript">
 function includeHTMLmessages(user) {
+    includeHTMLprofile(user)
+
   var z, i, elmnt, file, xhttp;
   /*loop through a collection of all HTML elements:*/
   z = document.getElementsByTagName("*");
@@ -78,6 +79,7 @@ function includeHTMLmessages(user) {
       } else {
       xhttp.open("GET", "usermessages/" + user, true);
 
+
       }
       xhttp.send();
 
@@ -90,63 +92,63 @@ function includeHTMLmessages(user) {
 }
 </script>
 
+<script language="JavaScript">
+function includeHTMLprofile(user) {
 
+  var z, i, elmnt, file, xhttp;
+  /*loop through a collection of all HTML elements:*/
+  z = document.getElementsByTagName("*");
 
+  for (i = 0; i < z.length; i++) {
+    elmnt = z[i];
+    /*search for elements with a certain atrribute:*/
+    file = elmnt.getAttribute("w3-include-html-profile");
 
+    if (file) {
+      /*make an HTTP request using the attribute value as the file name:*/
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4) {
+          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+          /*remove the attribute, and call this function once more:*/
 
-    <script type='text/javascript'>
-    (function() {
-    var input;
-    var lastMod;
-
-
-        startWatching();
-
-    function startWatching() {
-
-        var file;
-
-        if (typeof window.FileReader !== 'function') {
-            //display("The file API isn't supported on this browser yet.");
-            return;
         }
+      }
 
-        input = document.getElementById('jpat331.html');
-        if (!input) {
-            //display("Um, couldn't find the filename element.");
-        }
-        else if (!input.files) {
-            //display("This browser doesn't seem to support the `files` property of file inputs.");
-        }
-        else if (!input.files[0]) {
-            //display("Please select a file before clicking 'Show Size'");
-        }
-        else {
-            file = input.files[0];
-            lastMod = file.lastModifiedDate;
-            //display("Last modified date: " + lastMod);
-            //display("Change the file");
-            setInterval(tick, 250);
-        }
+      if (user === undefined){
+       var user = localStorage.getItem("previoususerprofile");
+      xhttp.open("GET", "userprofiles/" + user, true);
+
+
+
+      } else {
+      xhttp.open("GET", "userprofiles/" + user, true);
+
+      }
+      xhttp.send();
+
+        localStorage.setItem("previoususerprofile", user);
+
+      /*exit the function:*/
+      return;
     }
-
-    function tick() {
-        var file = input.files && input.files[0];
-        if (file && lastMod && file.lastModifiedDate.getTime() !== lastMod.getTime()) {
-            lastMod = file.lastModifiedDate;
-            //display("File changed: " + lastMod);
-            window.alert("alert2");
-            //includeHTMLmessages();
-        }
-    }
-
-    //function display(msg) {
-        //var p = document.createElement('p');
-        //p.innerHTML = msg;
-        //document.body.appendChild(p);
-    //}
-})();
+  }
+}
 </script>
+
+
+    <script>
+     setInterval(function() {
+  includeHTMLmessages();
+  includeHTMLprofile();
+  includeHTML();
+}, 5000);
+    </script>
+
+
+
+
 
 
 <STYLE type="text/css">
@@ -279,6 +281,9 @@ data-element_type="column" data-id="6e37b25">
 <DIV class="elementor-column-wrap elementor-element-populated">
 <DIV class="elementor-widget-wrap">
 
+<br><br><font color="white"><b>
+        <div w3-include-html-profile="/userprofiles/acha932.html"></div>
+</b></font>
 
 
 <DIV class="elementor-element elementor-element-d7e0f3c elementor-button-align-stretch elementor-widget elementor-widget-form"
@@ -436,6 +441,7 @@ var elementorFrontendConfig = {"isEditMode":"","is_rtl":"","urls":{"assets":"/"}
 </SCRIPT>
 <script>
 includeHTML();
+includeHTMLprofile();
 window.onload = includeHTMLmessages();
 
 </script>
