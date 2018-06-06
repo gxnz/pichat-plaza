@@ -15,16 +15,14 @@ import json
 import mimetypes
 import os
 import threading
-from apscheduler.schedulers.background import BackgroundScheduler
 import time
-import pandas as pd
 import socket
-
+import base64
 from time import gmtime, strftime
 import urllib2
-import atexit
-import sys
 import os.path
+import string
+import random
 
 # The address we listen for connections on
 listen_port = 10007
@@ -66,7 +64,7 @@ class MainApp(object):
     @cherrypy.expose
     def index(self):
 
-        Page = open("LoginScreen/login.htm", "r")
+        Page = open("LoginScreen/Login.htm", "r")
 
 
         return Page
@@ -138,14 +136,56 @@ class MainApp(object):
         Html_file.close()
 
         conn.close()
+        conn2.close()
         raise cherrypy.HTTPRedirect('/chat')
 
     @cherrypy.expose
-    def sendFile(self, recipient, file):
-        return "Send File"
-        #raise cherrypy.HTTPRedirect('/chat')
+    def sendFile(self, recipient, thefile):
+        with open(thefile, "rb") as f:
+            encoded = base64.b64encode(f.read())
 
+        conn2 = sqlite3.connect("onlineusers.db")
+        c2 = conn2.cursor()
+        c2.execute("SELECT ip FROM stuffToPlot WHERE username = '%s'" % str(recipient))
+        ipretrieve = c2.fetchall()
+        ip = str(ipretrieve[0][0].encode('utf-8'))
+
+        c2.execute("SELECT port FROM stuffToPlot WHERE username = '%s'" % str(recipient))
+        portretrieve = c2.fetchall()
+        port = str(int(portretrieve[0][0]))
+
+        mimetype = str(mimetypes.guess_type(thefile)[0])
+        me = cherrypy.session.get('username')
+        tuple = {
+        "sender" : me,
+        "destination" : recipient,
+        "file" : encoded,
+        "filename" : thefile,
+        "content_type" : mimetype,
+        "stamp" : time.time()
+        }
+        jsonned = json.dumps(tuple)
+
+        try:
+            returned = urllib2.Request("http://" + ip + ":" + port + "/receiveFile", jsonned, {'Content-Type':'application/json'})
+            returned2 = urllib2.urlopen(returned).read()
+            print returned2
+
+            print "Successfully sent a file to " + recipient
+
+            self.receiveMessage(2, recipient, thefile)
+
+        except:
+            self.receiveMessage(3, recipient, thefile)
+
+        conn2.close()
+        raise cherrypy.HTTPRedirect('/chat')
+
+
+    @cherrypy.expose
+    @cherrypy.tools.json_in()
     def receiveFile(self):
+        print "Receiving File . . ."
         sender = cherrypy.request.json['sender']
         destination = cherrypy.request.json['destination']
         file = cherrypy.request.json['file']
@@ -153,22 +193,44 @@ class MainApp(object):
         content_type = cherrypy.request.json['content_type']
         stamp = cherrypy.request.json['stamp']
 
+        decoded = base64.b64decode(file)
+
+        file = open("downloads/" + filename, 'w+')
+        file.write(decoded)
+        file.close()
+
+        print "File: " + filename + " successfully received from " + sender
+
+        self.receiveMessage(1, sender, filename)
+
+        return "0"
+
     @cherrypy.expose
     @cherrypy.tools.json_in()
-    def getProfile(self, profile_username, sender):
+    def getProfile(self):
+
+        jsondata = cherrypy.request.json
+        profile_username = jsondata['profile_username']
+        sender = jsondata['sender']
+
         print profile_username + " is requesting the profile of " + sender
 
-        file = open('ChatScreen/userprofiles/' + sender + '.html', 'w+').read
-        file = str(file)
-        file = json.dumps(file)
+        conn5 = sqlite3.connect('ChatScreen/userprofiles/profiledatabase.db')
+        c5=conn5.cursor()
+        c5.execute("SELECT lastUpdated, fullname, position, description, location, picture FROM profiledata WHERE profile_username = ?", (profile_username,))
+        output = c5.fetchall()
+        lastUpdated = output[0][0]
+        fullname = output[0][1]
+        position = output[0][2]
+        description = output[0][3]
+        location = output[0][4]
+        picture = output[0][5]
 
-        file.close
-        return file
+        tosend = {'lastUpdated': lastUpdated, 'fullname': fullname, 'position': position, 'description': description, 'location': location, 'picture': picture}
+        jsonned = json.dumps(tosend)
 
-
-
-
-
+        conn5.close()
+        return jsonned
 
     @cherrypy.expose
     def requestProfile(self, username):
@@ -187,7 +249,7 @@ class MainApp(object):
 
         conn3.close()
 
-        me = cherrypy.session.get('username')
+        me = usernamestored
         dict = {"profile_username": str(username), "sender": str(me)}
         data = json.dumps(dict)
 
@@ -272,8 +334,10 @@ class MainApp(object):
 
             html = "<html>"
             for row in c4.fetchall():
+                if row[6]:
+                    html += "<br>" + "<img src=" + str(row[6]) + """ height="150" width="150" />"""
                 if row[0]:
-                    html += "<br>" + "<b>UPI: </b>" + str(row[0])
+                    html += "<br><br>" + "<b>UPI: </b>" + str(row[0])
                 if row[1]:
                     html += "<br>" + "<b>Last Updated: </b>" + str(row[1])
                 if row[2]:
@@ -284,8 +348,6 @@ class MainApp(object):
                     html += "<br>" + "<b>Desciption: </b>" + str(row[4])
                 if row[5]:
                     html += "<br>" + "<b>Location: </b>" + str(row[5])
-                if row[6]:
-                    html += "<br>" + "<b>Picture: </b>" + str(row[6])
                 if row[7]:
                     html += "<br>" + "<b>Encoding: </b>" + str(row[7])
                 if row[8]:
@@ -307,22 +369,76 @@ class MainApp(object):
         except:
             print "Failed to retrieve profile from " + username
 
+    @cherrypy.expose
+    def profileiterate(self):
+        t1 = threading.Timer(5, self.profileiterator)
+        t1.start()
+        raise cherrypy.HTTPRedirect('/chat')
 
+    @cherrypy.expose
+    def profileiterator(self):
+        myusername = usernamestored
+        EncryptedSaltedPassword = encryptedsaltedpasswordstored
+        OnlineUsersList = urlopen(
+            "http://cs302.pythonanywhere.com/getList?username=" + myusername.lower() + "&password=" + EncryptedSaltedPassword + "&json=1").read()
+        jsonloaded = json.loads(OnlineUsersList)
+        for key, value in jsonloaded.items():
+            self.requestProfile(value['username'])
 
+    @cherrypy.expose
+    def editprofile(self, fullname, position, description, location, picture, encoding, encryption, decryptionKey):
 
+        print fullname
+        print position
+        print description
+        print location
+        print picture
+        print encoding
+        print encryption
+        print decryptionKey
 
+        me = cherrypy.session.get('username')
+        lastUpdated = time.time()
 
+        conn6 = sqlite3.connect('ChatScreen/userprofiles/profiledatabase.db')
+        c6 = conn6.cursor()
+
+        tuple = (
+        me, lastUpdated, fullname, position, description, location, picture, encoding, encryption, decryptionKey)
+        tuple2 = (lastUpdated, fullname, position, description, location, picture, encoding, encryption,
+            decryptionKey, me)
+
+        try:
+            c6.execute("INSERT INTO profiledata VALUES(?,?,?,?,?,?,?,?,?,?)", tuple)
+        except:
+            c6.execute("UPDATE profiledata SET lastUpdated = ?, fullname = ?, position = ?, description = ?, location = ?, picture = ?, encoding = ?, encryption = ?, decryptionKey = ? WHERE profile_username = ?", tuple2)
+        conn6.commit()
+
+        conn6.close()
+
+        raise cherrypy.HTTPRedirect('/chat')
+
+    @cherrypy.expose
+    def editprofilepage(self):
+        Page = open("EditProfileScreen/Edit.htm", "r")
+        return Page
 
 
     @cherrypy.expose
     @cherrypy.tools.json_in()
-    def receiveMessage(self):
+    def receiveMessage(self, optional = None, sender = None, filename = None):
         conn = sqlite3.connect('messages.db')
         c = conn.cursor()
         c.execute('CREATE TABLE IF NOT EXISTS messages (username TEXT)')
 
-        senderclient = cherrypy.request.json['sender']
-        messagedata = cherrypy.request.json['message']
+        if optional == None:
+            senderclient = cherrypy.request.json['sender']
+            messagedata = cherrypy.request.json['message']
+            #messagedata = self.injectiondef(messagedata)
+        elif optional == 1 or 2 or 3:
+            senderclient = sender
+            messagedata = filename
+            me = cherrypy.session.get('username')
 
         try:
             c.execute('ALTER TABLE messages ADD COLUMN ' + senderclient + ';')
@@ -332,7 +448,15 @@ class MainApp(object):
         print senderclient + " sent this: " + messagedata
 
         currenttime = strftime("%Y-%m-%d %H:%M:%S", gmtime())
-        messagedata = currenttime + " - " + senderclient + ": " + messagedata
+        if optional == None:
+            messagedata = currenttime + " - " + senderclient + ": " + messagedata
+        elif optional == 1:
+            messagedata = currenttime + " - " + senderclient + ": " + messagedata + " (Open in Downloads)"
+        elif optional == 2:
+            messagedata = currenttime + " - " + me + ": " + messagedata + " (File Sent Successfully)"
+        elif optional == 3:
+            messagedata = currenttime + " - " + me + ": " + messagedata + " (File Failed to Send)"
+
         c.execute('''INSERT INTO messages ( ''' + senderclient + ''') VALUES (?)''', (messagedata,))
         conn.commit()
 
@@ -358,11 +482,12 @@ class MainApp(object):
         Html_file.close()
 
         conn.close()
-
-        cherrypy.session['notification'] = senderclient;
+        if optional == None or 1:
+            cherrypy.session['notification'] = senderclient;
         self.chat()
 
-        return "0"
+        if optional == None:
+            return "0"
 
 
     @cherrypy.expose
@@ -416,15 +541,15 @@ class MainApp(object):
             #self.requestProfile(value['username'])
 
         #initialising image
-        data_uri_greendot = open('resource/greendot.png', 'rb').read().encode('base64').replace('\n', '')
+        data_uri_greendot = open('Resource/greendot.png', 'rb').read().encode('base64').replace('\n', '')
         greendot = '<img src="data:image/png;base64,{0}">'.format(data_uri_greendot)
-        data_uri_nodot = open('resource/nodot.png', 'rb').read().encode('base64').replace('\n', '')
+        data_uri_nodot = open('Resource/nodot.png', 'rb').read().encode('base64').replace('\n', '')
         nodot = '<img src="data:image/png;base64,{0}">'.format(data_uri_nodot)
-        data_uri_history = open('resource/history.png', 'rb').read().encode('base64').replace('\n', '')
+        data_uri_history = open('Resource/history.png', 'rb').read().encode('base64').replace('\n', '')
         history = '<img src="data:image/png;base64,{0}">'.format(data_uri_history)
-        data_uri_notification = open('resource/notification.png', 'rb').read().encode('base64').replace('\n', '')
+        data_uri_notification = open('Resource/notification.png', 'rb').read().encode('base64').replace('\n', '')
         notification = '<img src="data:image/png;base64,{0}">'.format(data_uri_notification)
-        data_uri_available = open('resource/available.png', 'rb').read().encode('base64').replace('\n', '')
+        data_uri_available = open('Resource/available.png', 'rb').read().encode('base64').replace('\n', '')
         available = '<img src="data:image/png;base64,{0}">'.format(data_uri_available)
 
         #extracts data from database to output
@@ -465,18 +590,36 @@ class MainApp(object):
         Html_file = open("ChatScreen/Chat_files/onlinetable.html", "w+")
         Html_file.write(Table)
         Html_file.close()
-
-        Tablehtml = open("ChatScreen/Chat_files/onlinetable.html", "r")
         Templatehtml = open("ChatScreen/Chat.htm", "r")
 
         conn.close()
         return Templatehtml
 
+    @cherrypy.expose
+    def injectiondef(self, input):
+        stageone = input.replace("<", "&lt;")
+        stagetwo = stageone.replace(">", "&gt;")
+        return stagetwo
 
     @cherrypy.expose
     def testprint(self):
         print 'testprint'
 
+    @cherrypy.expose
+    def auth(self):
+        global randomstring
+        randomstring = ''.join([random.choice(string.ascii_letters + string.digits) for n in xrange(6)])
+        Page = urlopen("https://api-mapper.clicksend.com/http/v2/send.php?method=http&username=gxu630&key=4EE82D0A-511E-A07D-3227-E17C51EB47B2&to=64210602780&message=" + randomstring)
+        print "Authenticator code is " + randomstring + ". Awaiting authentication"
+        Page = open("AuthScreen/Auth.htm", "r")
+        return Page
+
+    @cherrypy.expose
+    def submitauth(self, code):
+        if code == randomstring:
+            raise cherrypy.HTTPRedirect('/chat')
+        else:
+            self.signout()
 
     @cherrypy.expose
     def signin(self, username=None, password=None):
@@ -505,6 +648,9 @@ class MainApp(object):
             global out
             out = 0
             self.update()
+            if username == "gxu63":
+                raise cherrypy.HTTPRedirect('/auth')
+
             raise cherrypy.HTTPRedirect('/chat')
 
         else:
@@ -513,7 +659,6 @@ class MainApp(object):
     @cherrypy.expose
     def update(self):
         if out == 1:
-            print "returning"
             return
         else:
             username = usernamestored
@@ -535,6 +680,8 @@ class MainApp(object):
         encryptedsaltedpasswordstored = None
         global out
         out = 1
+        global randomstring
+        randomstring = None
 
         try:
             os.remove("ChatScreen/Chat_files/onlinetable.html")
@@ -575,6 +722,24 @@ class MainApp(object):
     @cherrypy.expose
     def Chat_files(self, filename):
         f = open("ChatScreen/Chat_files/" + filename, "r")
+        data = f.read()
+        f.close()
+        # return correct mimetype
+        cherrypy.response.headers['Content-Type'] = mimetypes.guess_type(filename)[0]
+        return data
+
+    @cherrypy.expose
+    def Edit_files(self, filename):
+        f = open("EditProfileScreen/Edit_files/" + filename, "r")
+        data = f.read()
+        f.close()
+        # return correct mimetype
+        cherrypy.response.headers['Content-Type'] = mimetypes.guess_type(filename)[0]
+        return data
+
+    @cherrypy.expose
+    def Auth_files(self, filename):
+        f = open("AuthScreen/Auth_files/" + filename, "r")
         data = f.read()
         f.close()
         # return correct mimetype

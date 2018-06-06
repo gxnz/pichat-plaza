@@ -1,0 +1,909 @@
+.oceanwp-about-me {
+	text-align: center; position: relative;
+}
+.oceanwp-about-me .oceanwp-about-me-avatar {
+	margin-top: 20px;
+}
+.oceanwp-about-me .oceanwp-about-me-social {
+	margin-top: 20px;
+}
+.oceanwp-about-me .oceanwp-about-me-avatar img {
+	border-radius: 50%; position: relative;
+}
+.oceanwp-about-me .oceanwp-about-me-name {
+	margin: 16px 0px 10px; text-transform: uppercase; clear: none; font-size: 13px; font-weight: 600; display: block;
+}
+.oceanwp-about-me .oceanwp-about-me-social li {
+	margin-left: 6px; display: inline-block;
+}
+.oceanwp-about-me .oceanwp-about-me-social li:first-child {
+	margin-left: 0px;
+}
+.oceanwp-about-me .oceanwp-about-me-social li a {
+	border-radius: 50%; width: 40px; height: 40px; text-align: center; line-height: 40px; font-size: 14px; display: inline-block;
+}
+.oceanwp-about-me .oceanwp-about-me-social.style-color li a {
+	color: rgb(255, 255, 255);
+}
+.oceanwp-about-me .oceanwp-about-me-social.style-color li a:hover {
+	color: rgb(255, 255, 255);
+}
+.oceanwp-about-me .oceanwp-about-me-social.style-color li.facebook a {
+	background-color: rgb(55, 88, 155);
+}
+.oceanwp-about-me .oceanwp-about-me-social.style-color li.facebook a:hover {
+	background-color: rgb(78, 125, 221);
+}
+.oceanwp-about-me .oceanwp-about-me-social.style-color li.twitter a {
+	background-color: rgb(70, 212, 254);
+}
+.oceanwp-about-me .oceanwp-about-me-social.style-color li.twitter a:hover {
+	background-color: rgb(126, 225, 254);
+}
+.oceanwp-about-me .oceanwp-about-me-social.style-color li.google-plus a {
+	background-color: rgb(222, 90, 73);
+}
+.oceanwp-about-me .oceanwp-about-me-social.style-color li.google-plus a:hover {
+	background-color: rgb(252, 122, 105);
+}
+.oceanwp-about-me .oceanwp-about-me-social.style-color li.instagram a {
+	background-color: rgb(89, 150, 199);
+}
+.oceanwp-about-me .oceanwp-about-me-social.style-color li.instagram a:hover {
+	background-color: rgb(105, 180, 240);
+}
+.oceanwp-about-me .oceanwp-about-me-social.style-color li.linkedin a {
+	background-color: rgb(65, 156, 202);
+}
+.oceanwp-about-me .oceanwp-about-me-social.style-color li.linkedin a:hover {
+	background-color: rgb(82, 195, 252);
+}
+.oceanwp-about-me .oceanwp-about-me-social.style-color li.pinterest a {
+	background-color: rgb(203, 32, 39);
+}
+.oceanwp-about-me .oceanwp-about-me-social.style-color li.pinterest a:hover {
+	background-color: rgb(247, 85, 92);
+}
+.oceanwp-about-me .oceanwp-about-me-social.style-color li.youtube a {
+	background-color: rgb(221, 70, 70);
+}
+.oceanwp-about-me .oceanwp-about-me-social.style-color li.youtube a:hover {
+	background-color: rgb(255, 98, 98);
+}
+.oceanwp-about-me .oceanwp-about-me-social.style-light li a {
+	border: 1px solid rgb(233, 233, 233); border-image: none; color: rgb(170, 170, 170);
+}
+.oceanwp-about-me .oceanwp-about-me-social.style-dark li a {
+	border: 1px solid rgb(85, 85, 85); border-image: none; color: rgb(146, 146, 146);
+}
+.oceanwp-about-me .oceanwp-about-me-social.style-light li.facebook a:hover {
+	border-color: rgb(55, 88, 155); color: rgb(55, 88, 155);
+}
+.oceanwp-about-me .oceanwp-about-me-social.style-dark li.facebook a:hover {
+	border-color: rgb(55, 88, 155); color: rgb(55, 88, 155);
+}
+.oceanwp-about-me .oceanwp-about-me-social.style-light li.twitter a:hover {
+	border-color: rgb(70, 212, 254); color: rgb(70, 212, 254);
+}
+.oceanwp-about-me .oceanwp-about-me-social.style-dark li.twitter a:hover {
+	border-color: rgb(70, 212, 254); color: rgb(70, 212, 254);
+}
+.oceanwp-about-me .oceanwp-about-me-social.style-light li.google-plus a:hover {
+	border-color: rgb(222, 90, 73); color: rgb(222, 90, 73);
+}
+.oceanwp-about-me .oceanwp-about-me-social.style-dark li.google-plus a:hover {
+	border-color: rgb(222, 90, 73); color: rgb(222, 90, 73);
+}
+.oceanwp-about-me .oceanwp-about-me-social.style-light li.instagram a:hover {
+	border-color: rgb(89, 150, 199); color: rgb(89, 150, 199);
+}
+.oceanwp-about-me .oceanwp-about-me-social.style-dark li.instagram a:hover {
+	border-color: rgb(89, 150, 199); color: rgb(89, 150, 199);
+}
+.oceanwp-about-me .oceanwp-about-me-social.style-light li.linkedin a:hover {
+	border-color: rgb(65, 156, 202); color: rgb(65, 156, 202);
+}
+.oceanwp-about-me .oceanwp-about-me-social.style-dark li.linkedin a:hover {
+	border-color: rgb(65, 156, 202); color: rgb(65, 156, 202);
+}
+.oceanwp-about-me .oceanwp-about-me-social.style-light li.pinterest a:hover {
+	border-color: rgb(203, 32, 39); color: rgb(203, 32, 39);
+}
+.oceanwp-about-me .oceanwp-about-me-social.style-dark li.pinterest a:hover {
+	border-color: rgb(203, 32, 39); color: rgb(203, 32, 39);
+}
+.oceanwp-about-me .oceanwp-about-me-social.style-light li.youtube a:hover {
+	border-color: rgb(221, 70, 70); color: rgb(221, 70, 70);
+}
+.oceanwp-about-me .oceanwp-about-me-social.style-dark li.youtube a:hover {
+	border-color: rgb(221, 70, 70); color: rgb(221, 70, 70);
+}
+#wp-calendar {
+	margin: 0px; border: 0px currentColor; border-image: none; width: 100%; font-size: 12px; border-collapse: collapse; position: relative; border-spacing: 0;
+}
+#wp-calendar caption {
+	border-width: 0px 0px 3px; border-style: solid; border-color: rgb(233, 233, 233); padding: 0px 0px 10px; text-align: center; color: rgb(19, 175, 240); text-transform: uppercase; font-family: "Montserrat", sans-serif; font-size: 13px; font-weight: 400; background-color: transparent;
+}
+#wp-calendar td {
+	text-align: center;
+}
+#wp-calendar th {
+	text-align: center;
+}
+#wp-calendar th {
+	border-width: 0px 0px 1px; border-style: solid; border-color: rgb(233, 233, 233); padding: 13px 0px 14px; color: rgb(119, 119, 119); font-family: "Open Sans"; font-size: 12px; font-weight: 400; background-color: transparent;
+}
+#wp-calendar tbody {
+	border-width: 0px 0px 3px; border-style: solid; border-color: rgb(233, 233, 233);
+}
+#wp-calendar tbody td {
+	background: none;
+}
+#wp-calendar tbody td:hover {
+	background: none;
+}
+#wp-calendar tbody td.pad:hover {
+	background: none;
+}
+#wp-calendar tbody td {
+	padding: 5px 0px 0px; border: 0px currentColor; border-image: none; width: 14.28%; height: 30px; color: rgb(146, 146, 146); line-height: 30px; font-family: "Open Sans"; font-size: 12px; font-weight: 400; vertical-align: middle;
+}
+#wp-calendar tbody tr:last-child td {
+	padding-bottom: 10px;
+}
+#wp-calendar tbody a {
+	font-weight: 600;
+}
+#wp-calendar tbody #today {
+	font-weight: 600;
+}
+#wp-calendar tbody #today {
+	color: rgb(17, 17, 17);
+}
+#wp-calendar tfoot td {
+	border: 0px currentColor; border-image: none; background-color: transparent;
+}
+#wp-calendar tfoot tr td {
+	top: -10px; text-transform: uppercase; padding-top: 10px; font-family: "Montserrat", sans-serif; font-size: 11px; position: absolute; background-color: transparent !important;
+}
+#wp-calendar tfoot tr td#prev {
+	z-index: 10;
+}
+#wp-calendar tfoot tr td#next {
+	z-index: 10;
+}
+#wp-calendar tfoot tr td a {
+	border-bottom-color: currentColor; border-bottom-width: 1px; border-bottom-style: solid;
+}
+#wp-calendar tfoot tr td a:hover {
+	border-bottom-style: dashed;
+}
+#wp-calendar tfoot #next {
+	right: 0px;
+}
+.contact-info-widget {
+	list-style: none; margin: 0px; padding: 0px;
+}
+.contact-info-widget li {
+	margin: 0px 0px 20px; padding: 0px; border: 0px currentColor; border-image: none; width: 100%; display: inline-block;
+}
+.contact-info-widget li:last-child {
+	margin-bottom: 0px;
+}
+.contact-info-widget .oceanwp-info-wrap {
+	display: block;
+}
+.contact-info-widget span.oceanwp-contact-title {
+	display: block;
+}
+.contact-info-widget span.oceanwp-contact-text {
+	display: block;
+}
+.contact-info-widget span.oceanwp-contact-title {
+	color: rgb(119, 119, 119); line-height: 1.4; font-weight: bold;
+}
+.contact-info-widget span.oceanwp-contact-text {
+	line-height: 18px;
+}
+.contact-info-widget li.skype {
+	display: inline-block;
+}
+.contact-info-widget li.skype a {
+	padding: 12px 15px; color: rgb(255, 255, 255); text-transform: uppercase; line-height: 1; letter-spacing: 1px; font-size: 12px; font-weight: 600; display: inline-block; background-color: rgb(12, 165, 222);
+}
+.contact-info-widget li.skype a:hover {
+	color: rgb(255, 255, 255); background-color: rgb(5, 129, 175);
+}
+.contact-info-widget.default i {
+	border-radius: 2px; border: 1px solid rgb(233, 233, 233); border-image: none; width: 40px; height: 40px; text-align: center; color: rgb(19, 175, 240); line-height: 40px; margin-right: 15px; float: left; -webkit-border-radius: 2px; -moz-border-radius: 2px;
+}
+.contact-info-widget.default .oceanwp-info-wrap {
+	padding-left: 55px;
+}
+.contact-info-widget.big-icons li {
+	margin-bottom: 30px; display: flex; flex-wrap: wrap; align-items: center; -webkit-align-items: center; -webkit-box-align: center; -webkit-flex-wrap: wrap;
+}
+.contact-info-widget.big-icons li:last-child {
+	margin-bottom: 0px;
+}
+.contact-info-widget.big-icons i {
+	border-radius: 50%; border: 1px solid rgb(233, 233, 233); transition:0.3s; border-image: none; width: 72px; height: 72px; text-align: center; color: rgb(19, 175, 240); line-height: 72px; font-size: 30px; margin-right: 20px; float: left; -webkit-transition: all .3s ease; -webkit-border-radius: 50%; -moz-border-radius: 50%; -moz-transition: all .3s ease;
+}
+.contact-info-widget.big-icons li:hover i {
+	border-color: rgb(19, 175, 240); color: rgb(255, 255, 255); background-color: rgb(19, 175, 240);
+}
+.contact-info-widget.big-icons span.oceanwp-contact-title {
+	font-size: 14px; display: block;
+}
+.contact-info-widget.big-icons li.skype a {
+	width: 100%; text-align: center;
+}
+.contact-info-widget.no-icons li .oceanwp-contact-title {
+	font-weight: 600; display: inline-block; min-width: 70px;
+}
+.contact-info-widget.no-icons li.skype {
+	margin-top: 20px;
+}
+.oceanwp-custom-links {
+	list-style: none; margin: 0px; padding: 0px;
+}
+.oceanwp-custom-links li {
+	padding: 2px 0px;
+}
+.oceanwp-custom-links li a {
+	color: rgb(51, 51, 51); font-size: 13px; display: inline-block; position: relative;
+}
+.oceanwp-custom-links li a::before {
+	color: rgb(146, 146, 146); font-family: FontAwesome; font-size: 10px; font-weight: normal; margin-top: -2px; margin-right: 10px; vertical-align: middle; display: inline-block; -ms-zoom: 1; content: "\f10c";
+}
+.oceanwp-custom-links li a:hover {
+	color: rgb(19, 175, 240); margin-left: 8px;
+}
+.oceanwp-custom-links li a:hover::before {
+	color: rgb(19, 175, 240);
+}
+.oceanwp-custom-links li:first-child {
+	padding-top: 0px;
+}
+.oceanwp-custom-menu.right {
+	text-align: right;
+}
+.oceanwp-custom-menu.center {
+	text-align: center;
+}
+.oceanwp-custom-menu > ul {
+	list-style: none; margin: 0px; padding: 0px;
+}
+.oceanwp-custom-menu > ul > li {
+	float: none; display: inline-block;
+}
+.oceanwp-custom-menu > ul > li > a {
+	padding: 8px 15px; color: rgb(85, 85, 85); line-height: 20px; letter-spacing: 0.6px; font-size: 13px; display: block;
+}
+.oceanwp-custom-menu > ul > li > a:hover {
+	color: rgb(51, 51, 51);
+}
+.custom-menu-widget .oceanwp-custom-menu > ul > li {
+	border-bottom-color: rgb(233, 233, 233); border-bottom-width: 1px; border-bottom-style: solid; display: block;
+}
+.custom-menu-widget .oceanwp-custom-menu > ul > li > a {
+	padding: 8px 0px;
+}
+.custom-menu-widget .oceanwp-custom-menu > ul > li > a .nav-arrow {
+	padding: 0px; top: 50%; right: 0px; position: absolute; transform: translateY(-50%); -webkit-transform: translateY(-50%);
+}
+.custom-menu-widget .oceanwp-custom-menu.right > ul > li > a .nav-arrow {
+	left: 0px; right: auto;
+}
+[dir='rtl'] .custom-menu-widget .oceanwp-custom-menu.right > ul > li > a .nav-arrow {
+	left: auto; right: 0px;
+}
+.custom-menu-widget .oceanwp-custom-menu .dropdown-menu .sub-menu {
+	margin: 10px 0px 0px 12px; left: auto; top: auto; line-height: 1; border-top-color: currentColor; border-top-width: 0px; border-top-style: none; position: relative; min-width: 100%; box-shadow: none; background-color: transparent; -webkit-box-shadow: none; -moz-box-shadow: none;
+}
+[dir='rtl'] .custom-menu-widget .oceanwp-custom-menu .dropdown-menu .sub-menu {
+	right: auto;
+}
+.custom-menu-widget .oceanwp-custom-menu .dropdown-menu .sub-menu li {
+	border-bottom-color: rgb(233, 233, 233); border-bottom-width: 1px; border-bottom-style: solid; float: none; display: block;
+}
+.custom-menu-widget .oceanwp-custom-menu .dropdown-menu .sub-menu li:last-child {
+	border-bottom-color: currentColor; border-bottom-width: 0px; border-bottom-style: none;
+}
+.custom-menu-widget .oceanwp-custom-menu .dropdown-menu .sub-menu li a.menu-link {
+	padding: 8px 0px; color: rgb(85, 85, 85); line-height: 20px; letter-spacing: 0.6px; font-size: 13px;
+}
+.custom-menu-widget .oceanwp-custom-menu .dropdown-menu .sub-menu li a.menu-link:hover {
+	color: rgb(51, 51, 51); background-color: transparent;
+}
+.oceanwp-instagram-pics li {
+	transition:0.3s; height: 100%; float: left; display: block; -webkit-transition: all .3s ease; -moz-transition: all .3s ease;
+}
+.oceanwp-instagram-pics.margin li {
+	padding: 3px;
+}
+.oceanwp-instagram-pics li a {
+	vertical-align: top;
+}
+.oceanwp-instagram-pics li img {
+	width: 100%; display: block;
+}
+.oceanwp-instagram-pics li:hover {
+	opacity: 0.8;
+}
+.oceanwp-instagram-header {
+	padding: 10px; position: relative;
+}
+.oceanwp-instagram-header.oceanwp-left {
+	text-align: left;
+}
+.oceanwp-instagram-header.oceanwp-right {
+	text-align: right;
+}
+.oceanwp-instagram-header.oceanwp-center {
+	text-align: center;
+}
+.oceanwp-instagram-avatar {
+	line-height: 1;
+}
+.oceanwp-instagram-header.oceanwp-left .oceanwp-instagram-avatar {
+	margin-right: 10px; float: left;
+}
+.oceanwp-instagram-header.oceanwp-right .oceanwp-instagram-avatar {
+	margin-left: 10px; float: right;
+}
+.oceanwp-instagram-header.oceanwp-center .oceanwp-instagram-avatar {
+	margin: 0px 0px 10px;
+}
+.oceanwp-instagram-avatar a {
+	width: 75px; height: 75px; overflow: hidden; display: inline-block; position: relative;
+}
+.oceanwp-instagram-avatar.square a {
+	border-radius: 2px; -webkit-border-radius: 2px; -moz-border-radius: 2px;
+}
+.oceanwp-instagram-avatar.square a img {
+	border-radius: 2px; -webkit-border-radius: 2px; -moz-border-radius: 2px;
+}
+.oceanwp-instagram-avatar.rounded a {
+	border-radius: 50%; -webkit-border-radius: 50%; -moz-border-radius: 50%;
+}
+.oceanwp-instagram-avatar.rounded a img {
+	border-radius: 50%; -webkit-border-radius: 50%; -moz-border-radius: 50%;
+}
+.oceanwp-instagram-avatar a img {
+	transition:0.3s; width: 75px; height: 75px; -webkit-transition: all .3s ease; -moz-transition: all .3s ease;
+}
+.oceanwp-instagram-avatar a:hover img {
+	opacity: 0.5;
+}
+.oceanwp-instagram-follow {
+	transition:0.2s ease-out; top: 0px; width: 100%; text-align: center; margin-top: -12px; display: block; position: absolute; opacity: 0; -webkit-transition: all ease-out .2s; -o-transition: all ease-out .2s; -moz-transition: all ease-out .2s;
+}
+.oceanwp-instagram-follow span {
+	padding: 4px 6px; border-radius: 3px; border: 1px solid rgb(50, 147, 69); border-image: none; color: rgb(255, 255, 255); text-transform: uppercase; line-height: 1; font-size: 10px; display: inline-block; text-shadow: 0px 1px 1px #2c803c; background-image: -ms-linear-gradient(rgb(71, 188, 96), rgb(57, 166, 78)); background-color: rgb(71, 188, 96); -webkit-border-radius: 3px; -moz-border-radius: 3px;
+}
+.oceanwp-instagram-avatar a:hover .oceanwp-instagram-follow {
+	top: 50%; opacity: 1;
+}
+.oceanwp-instagram-info .oceanwp-instagram-username {
+	margin: 0px 0px 4px; text-transform: capitalize; line-height: 1.3; font-size: 16px; font-weight: 600; display: block;
+}
+.oceanwp-instagram-info .oceanwp-instagram-desc {
+	margin: 0px; line-height: 1.3; display: block;
+}
+.oceanwp-instagram-pics.style-one li:first-child {
+	width: 100%;
+}
+.oceanwp-instagram-pics.style-one li {
+	width: 33.33%;
+}
+.oceanwp-instagram-pics.style-two li:nth-child(1) {
+	width: 50%;
+}
+.oceanwp-instagram-pics.style-two li:nth-child(2) {
+	width: 50%;
+}
+.oceanwp-instagram-pics.style-two li {
+	width: 25%;
+}
+.oceanwp-instagram-pics.style-three li:nth-child(4n+1) {
+	width: 100%;
+}
+.oceanwp-instagram-pics.style-three li {
+	width: 33.33%;
+}
+.oceanwp-style-four-wrap {
+	background: rgb(246, 246, 246); border-radius: 3px; border-bottom-color: rgb(238, 238, 238); border-bottom-width: 3px; border-bottom-style: solid; -webkit-border-radius: 3px; -moz-border-radius: 3px;
+}
+.oceanwp-instagram-bar {
+	overflow: hidden; border-top-left-radius: 3px; border-top-right-radius: 3px; background-image: -ms-linear-gradient(rgb(111, 151, 182), rgb(63, 114, 155)); background-color: rgb(111, 151, 182);
+}
+.oceanwp-instagram-bar .instagram-logo {
+	background: url("../../assets/img/instagram-logo.png") no-repeat; margin: 8px auto 6px; width: 96px; height: 29px; display: block;
+}
+.oceanwp-style-four-wrap .oceanwp-instagram-header {
+	border-style: solid; border-color: rgb(234, 234, 234); padding: 20px 15px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; background-color: rgb(255, 255, 255);
+}
+.oceanwp-style-four-wrap .oceanwp-instagram-header.oceanwp-after {
+	margin-bottom: 10px; border-top-color: rgb(234, 234, 234); border-top-width: 1px; border-top-style: solid;
+}
+.oceanwp-instagram-pics.style-four.margin li img {
+	background: rgb(255, 255, 255); padding: 3px; box-shadow: 0px 0px 0px 1px rgba(0,0,0,0.04), 0px 1px 5px rgba(0,0,0,0.1); -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04), 0 1px 5px rgba(0, 0, 0, 0.1); -moz-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04), 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+.oceanwp-instagram-pics.style-four {
+	border-style: solid; border-color: rgb(234, 234, 234); padding: 10px; border-right-width: 1px; border-left-width: 1px;
+}
+.oceanwp-instagram-pics.style-four li {
+	width: 33.33%;
+}
+.oceanwp-instagram-pics.two-columns li {
+	width: 50%;
+}
+.oceanwp-instagram-pics.three-columns li {
+	width: 33.33%;
+}
+.oceanwp-instagram-pics.four-columns li {
+	width: 25%;
+}
+.oceanwp-instagram-pics.five-columns li {
+	width: 20%;
+}
+.oceanwp-instagram-pics.six-columns li {
+	width: 16.66%;
+}
+.oceanwp-instagram-pics.seven-columns li {
+	width: 14.28%;
+}
+.oceanwp-instagram-pics.eight-columns li {
+	width: 12.5%;
+}
+.oceanwp-instagram-pics.nine-columns li {
+	width: 11.11%;
+}
+.oceanwp-instagram-pics.ten-columns li {
+	width: 10%;
+}
+.oceanwp-instagram-link {
+	margin: 10px 0px 0px; text-align: center; display: block;
+}
+.oceanwp-instagram-link a {
+	padding: 0px 0px 3px; text-transform: uppercase; line-height: 1.2; letter-spacing: 0.8px; font-size: 12px; border-bottom-color: currentColor; border-bottom-width: 1px; border-bottom-style: solid; display: inline-block;
+}
+.oceanwp-style-four-wrap .oceanwp-instagram-link {
+	border-style: solid; border-color: rgb(234, 234, 234); margin: 0px; padding: 3px 0px 16px; border-right-width: 1px; border-left-width: 1px;
+}
+.oceanwp-style-four-wrap .oceanwp-instagram-link a {
+	margin: 0px auto; padding: 12px 8px; border-radius: 5px; border: 0px currentColor; border-image: none; width: 80%; color: rgb(255, 255, 255); font-weight: 600; display: block; max-width: 300px; box-shadow: 0px 0px 0px 1px rgba(0,0,0,0.04), 0px 1px 3px rgba(0,0,0,0.1); background-color: rgb(85, 130, 167); -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.1); -webkit-border-radius: 5px; -moz-border-radius: 5px; -moz-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+.oceanwp-style-four-wrap .oceanwp-instagram-link a:hover {
+	color: rgb(255, 255, 255); background-color: rgb(63, 114, 155);
+}
+.oceanwp-flickr-wrap .flickr_badge_image {
+	margin: 0px 4% 10px 0px; transition:0.3s; width: 30.6%; float: left;
+}
+.oceanwp-flickr-wrap .flickr_badge_image:hover {
+	opacity: 0.8;
+}
+.oceanwp-flickr-wrap .flickr_badge_image#flickr_badge_image3 {
+	margin-right: 0px;
+}
+.oceanwp-flickr-wrap .flickr_badge_image#flickr_badge_image6 {
+	margin-right: 0px;
+}
+.oceanwp-flickr-wrap .flickr_badge_image#flickr_badge_image9 {
+	margin-right: 0px;
+}
+.oceanwp-flickr-wrap .flickr_badge_image a {
+	border: currentColor; border-image: none;
+}
+.oceanwp-flickr-wrap .flickr_badge_image img {
+	margin: 0px; width: 100%; height: 100%; overflow: hidden; position: relative; max-height: 100%; max-width: 100%;
+}
+p.flickr_stream_wrap {
+	width: 100%; line-height: 1; letter-spacing: 0.6px; font-size: 90%; margin-top: 10px; margin-bottom: 0px; display: inline-block;
+}
+p.flickr_stream_wrap a {
+	background-position: left; padding-left: 25px; display: inline-block; background-image: url("../../assets/img/flickr.png"); background-repeat: no-repeat;
+}
+@media only screen and (max-width:480px)
+{
+.oceanwp-flickr-wrap .flickr_badge_image {
+	width: 23%;
+}
+}
+.oceanwp-newsletter-form-wrap {
+	position: relative;
+}
+.oceanwp-newsletter-form-wrap .oceanwp-mail-text {
+	margin-bottom: 10px;
+}
+.oceanwp-newsletter-form-wrap form {
+	margin: 0px auto; position: relative; max-width: 100%;
+}
+.oceanwp-newsletter-form-wrap input[type='email'] {
+	margin: 0px; padding: 0px 15px; height: 50px;
+}
+.oceanwp-newsletter-form-wrap button {
+	padding: 0px 15px; border-radius: 3px; top: 50%; height: 60%; right: 15px; display: block; position: absolute; transform: translateY(-50%); -webkit-transform: translateY(-50%);
+}
+body.woocommerce .oceanwp-newsletter-form-wrap button {
+	padding-top: 0px !important; padding-bottom: 0px !important;
+}
+.oceanwp-recent-posts li {
+	line-height: 1.6; padding-top: 15px; margin-top: 15px; border-top-color: rgb(233, 233, 233); border-top-width: 1px; border-top-style: solid; display: flex; position: relative; justify-content: center; align-items: center;
+}
+.oceanwp-recent-posts li:first-child {
+	border: 0px currentColor; border-image: none; padding-top: 0px; margin-top: 0px;
+}
+.oceanwp-recent-posts .recent-posts-thumbnail {
+	width: 25%; margin-right: 4%; position: relative; min-width: 68px;
+}
+.oceanwp-recent-posts .recent-posts-thumbnail img {
+	border-radius: 3px; width: 100%;
+}
+.oceanwp-recent-posts .recent-posts-thumbnail .overlay {
+	border-radius: 3px; transition:0.3s; left: 0px; width: 100%; height: 100%; text-align: center; right: 0px; bottom: 0px; position: absolute; opacity: 0; background-color: rgba(0, 0, 0, 0.2); -webkit-transition: all .3s ease; -o-transition: all .3s ease; -moz-transition: all .3s ease;
+}
+.oceanwp-recent-posts .recent-posts-thumbnail:hover .overlay {
+	opacity: 1;
+}
+.oceanwp-recent-posts .recent-posts-details {
+	width: 100%;
+}
+.oceanwp-recent-posts .recent-posts-title {
+	letter-spacing: 0.4px; font-weight: 500;
+}
+.oceanwp-recent-posts .recent-posts-info {
+	color: rgb(170, 170, 170); text-transform: uppercase; line-height: 1.2; letter-spacing: 0.2px; font-size: 10px; margin-top: 6px; display: block;
+}
+.oceanwp-recent-posts .recent-posts-info .sep {
+	padding: 0px 3px;
+}
+.oceanwp-recent-posts .recent-posts-date {
+	display: inline-block;
+}
+.oceanwp-recent-posts .recent-posts-comments {
+	display: inline-block;
+}
+.oceanwp-recent-posts .recent-posts-date i {
+	margin-right: 4px;
+}
+.oceanwp-recent-posts .recent-posts-comments i {
+	margin-right: 4px;
+}
+.oceanwp-recent-posts .recent-posts-comments a {
+	color: rgb(153, 153, 153);
+}
+.oceanwp-recent-posts .recent-posts-comments a:hover {
+	color: rgb(50, 182, 192);
+}
+@media only screen and (max-width:959px)
+{
+.oceanwp-recent-posts .recent-posts-thumbnail {
+	width: 15%; margin-right: 3%;
+}
+}
+@media only screen and (max-width:480px)
+{
+.oceanwp-recent-posts .recent-posts-thumbnail {
+	width: 25%; margin-right: 4%;
+}
+}
+.oceanwp-social-icons {
+	list-style: none; margin: 0px; padding: 0px; width: 100%; display: inline-block;
+}
+.oceanwp-social-icons.rotate a:hover {
+	transform: rotate(360deg);
+}
+.oceanwp-social-icons.zoomout a:hover {
+	transform: scale(0.8);
+}
+.oceanwp-social-icons.float a:hover {
+	transform: translateY(-3px);
+}
+.oceanwp-social-icons li {
+	margin: 3px; padding: 0px; display: inline-block;
+}
+.oceanwp-social-icons li a {
+	padding: 0px; text-align: center; display: block;
+}
+.oceanwp-social-icons.style-light li a {
+	border-radius: 2px; width: 55px; height: 55px; line-height: 55px; font-size: 16px;
+}
+.oceanwp-social-icons.style-dark li a {
+	border-radius: 2px; width: 55px; height: 55px; line-height: 55px; font-size: 16px;
+}
+.oceanwp-social-icons.style-colored li a {
+	border-radius: 2px; width: 55px; height: 55px; line-height: 55px; font-size: 16px;
+}
+.oceanwp-social-icons.style-light li a {
+	border: 1px solid rgb(233, 233, 233); border-image: none; color: rgb(187, 187, 187);
+}
+.oceanwp-social-icons.style-light li.oceanwp-twitter a:hover {
+	border-color: rgb(70, 212, 254) !important; color: rgb(70, 212, 254) !important;
+}
+.oceanwp-social-icons.style-light li.oceanwp-facebook a:hover {
+	border-color: rgb(55, 88, 155) !important; color: rgb(55, 88, 155) !important;
+}
+.oceanwp-social-icons.style-light li.oceanwp-google-plus a:hover {
+	border-color: rgb(222, 90, 73) !important; color: rgb(222, 90, 73) !important;
+}
+.oceanwp-social-icons.style-light li.oceanwp-pinterest a:hover {
+	border-color: rgb(203, 32, 39) !important; color: rgb(203, 32, 39) !important;
+}
+.oceanwp-social-icons.style-light li.oceanwp-dribbble a:hover {
+	border-color: rgb(234, 76, 137) !important; color: rgb(234, 76, 137) !important;
+}
+.oceanwp-social-icons.style-light li.oceanwp-vk a:hover {
+	border-color: rgb(89, 123, 165) !important; color: rgb(89, 123, 165) !important;
+}
+.oceanwp-social-icons.style-light li.oceanwp-instagram a:hover {
+	border-color: rgb(63, 114, 155) !important; color: rgb(63, 114, 155) !important;
+}
+.oceanwp-social-icons.style-light li.oceanwp-linkedin a:hover {
+	border-color: rgb(51, 153, 204) !important; color: rgb(51, 153, 204) !important;
+}
+.oceanwp-social-icons.style-light li.oceanwp-tumblr a:hover {
+	border-color: rgb(44, 71, 98) !important; color: rgb(44, 71, 98) !important;
+}
+.oceanwp-social-icons.style-light li.oceanwp-github a:hover {
+	border-color: rgb(96, 176, 68) !important; color: rgb(96, 176, 68) !important;
+}
+.oceanwp-social-icons.style-light li.oceanwp-flickr a:hover {
+	border-color: rgb(250, 64, 134) !important; color: rgb(250, 64, 134) !important;
+}
+.oceanwp-social-icons.style-light li.oceanwp-skype a:hover {
+	border-color: rgb(0, 175, 240) !important; color: rgb(0, 175, 240) !important;
+}
+.oceanwp-social-icons.style-light li.oceanwp-trello a:hover {
+	border-color: rgb(0, 121, 191) !important; color: rgb(0, 121, 191) !important;
+}
+.oceanwp-social-icons.style-light li.oceanwp-foursquare a:hover {
+	border-color: rgb(45, 91, 227) !important; color: rgb(45, 91, 227) !important;
+}
+.oceanwp-social-icons.style-light li.oceanwp-youtube a:hover {
+	border-color: rgb(196, 48, 43) !important; color: rgb(196, 48, 43) !important;
+}
+.oceanwp-social-icons.style-light li.oceanwp-vimeo a:hover {
+	border-color: rgb(26, 183, 234) !important; color: rgb(26, 183, 234) !important;
+}
+.oceanwp-social-icons.style-light li.oceanwp-vine a:hover {
+	border-color: rgb(0, 191, 143) !important; color: rgb(0, 191, 143) !important;
+}
+.oceanwp-social-icons.style-light li.oceanwp-xing a:hover {
+	border-color: rgb(0, 100, 100) !important; color: rgb(0, 100, 100) !important;
+}
+.oceanwp-social-icons.style-light li.oceanwp-yelp a:hover {
+	border-color: rgb(196, 18, 0) !important; color: rgb(196, 18, 0) !important;
+}
+.oceanwp-social-icons.style-light li.oceanwp-tripadvisor a:hover {
+	border-color: rgb(88, 148, 66) !important; color: rgb(88, 148, 66) !important;
+}
+.oceanwp-social-icons.style-light li.oceanwp-rss a:hover {
+	border-color: rgb(255, 121, 0) !important; color: rgb(255, 121, 0) !important;
+}
+.oceanwp-social-icons.style-light li.oceanwp-email a:hover {
+	border-color: rgb(19, 175, 240) !important; color: rgb(19, 175, 240) !important;
+}
+.oceanwp-social-icons.style-dark li a {
+	border: 1px solid rgb(51, 51, 51); border-image: none; color: rgb(51, 51, 51);
+}
+.oceanwp-social-icons.style-dark li.oceanwp-twitter a:hover {
+	border-color: rgb(70, 212, 254) !important; color: rgb(70, 212, 254) !important;
+}
+.oceanwp-social-icons.style-dark li.oceanwp-facebook a:hover {
+	border-color: rgb(55, 88, 155) !important; color: rgb(55, 88, 155) !important;
+}
+.oceanwp-social-icons.style-dark li.oceanwp-google-plus a:hover {
+	border-color: rgb(222, 90, 73) !important; color: rgb(222, 90, 73) !important;
+}
+.oceanwp-social-icons.style-dark li.oceanwp-pinterest a:hover {
+	border-color: rgb(203, 32, 39) !important; color: rgb(203, 32, 39) !important;
+}
+.oceanwp-social-icons.style-dark li.oceanwp-dribbble a:hover {
+	border-color: rgb(234, 76, 137) !important; color: rgb(234, 76, 137) !important;
+}
+.oceanwp-social-icons.style-dark li.oceanwp-vk a:hover {
+	border-color: rgb(89, 123, 165) !important; color: rgb(89, 123, 165) !important;
+}
+.oceanwp-social-icons.style-dark li.oceanwp-instagram a:hover {
+	border-color: rgb(63, 114, 155) !important; color: rgb(63, 114, 155) !important;
+}
+.oceanwp-social-icons.style-dark li.oceanwp-linkedin a:hover {
+	border-color: rgb(51, 153, 204) !important; color: rgb(51, 153, 204) !important;
+}
+.oceanwp-social-icons.style-dark li.oceanwp-tumblr a:hover {
+	border-color: rgb(44, 71, 98) !important; color: rgb(44, 71, 98) !important;
+}
+.oceanwp-social-icons.style-dark li.oceanwp-github a:hover {
+	border-color: rgb(96, 176, 68) !important; color: rgb(96, 176, 68) !important;
+}
+.oceanwp-social-icons.style-dark li.oceanwp-flickr a:hover {
+	border-color: rgb(250, 64, 134) !important; color: rgb(250, 64, 134) !important;
+}
+.oceanwp-social-icons.style-dark li.oceanwp-skype a:hover {
+	border-color: rgb(0, 175, 240) !important; color: rgb(0, 175, 240) !important;
+}
+.oceanwp-social-icons.style-dark li.oceanwp-trello a:hover {
+	border-color: rgb(0, 121, 191) !important; color: rgb(0, 121, 191) !important;
+}
+.oceanwp-social-icons.style-dark li.oceanwp-foursquare a:hover {
+	border-color: rgb(45, 91, 227) !important; color: rgb(45, 91, 227) !important;
+}
+.oceanwp-social-icons.style-dark li.oceanwp-youtube a:hover {
+	border-color: rgb(196, 48, 43) !important; color: rgb(196, 48, 43) !important;
+}
+.oceanwp-social-icons.style-dark li.oceanwp-vimeo a:hover {
+	border-color: rgb(26, 183, 234) !important; color: rgb(26, 183, 234) !important;
+}
+.oceanwp-social-icons.style-dark li.oceanwp-vine a:hover {
+	border-color: rgb(0, 191, 143) !important; color: rgb(0, 191, 143) !important;
+}
+.oceanwp-social-icons.style-dark li.oceanwp-xing a:hover {
+	border-color: rgb(0, 100, 100) !important; color: rgb(0, 100, 100) !important;
+}
+.oceanwp-social-icons.style-dark li.oceanwp-yelp a:hover {
+	border-color: rgb(196, 18, 0) !important; color: rgb(196, 18, 0) !important;
+}
+.oceanwp-social-icons.style-dark li.oceanwp-tripadvisor a:hover {
+	border-color: rgb(88, 148, 66) !important; color: rgb(88, 148, 66) !important;
+}
+.oceanwp-social-icons.style-dark li.oceanwp-rss a:hover {
+	border-color: rgb(255, 121, 0) !important; color: rgb(255, 121, 0) !important;
+}
+.oceanwp-social-icons.style-dark li.oceanwp-email a:hover {
+	border-color: rgb(19, 175, 240) !important; color: rgb(19, 175, 240) !important;
+}
+.oceanwp-social-icons.style-colored li a {
+	color: rgb(255, 255, 255);
+}
+.oceanwp-social-icons.style-colored li a:hover {
+	color: rgb(255, 255, 255);
+}
+.oceanwp-social-icons.style-colored li.oceanwp-twitter a {
+	background-color: rgb(70, 212, 254);
+}
+.oceanwp-social-icons.style-colored li.oceanwp-twitter a:hover {
+	background-color: rgb(57, 180, 216);
+}
+.oceanwp-social-icons.style-colored li.oceanwp-facebook a {
+	background-color: rgb(55, 88, 155);
+}
+.oceanwp-social-icons.style-colored li.oceanwp-facebook a:hover {
+	background-color: rgb(45, 71, 124);
+}
+.oceanwp-social-icons.style-colored li.oceanwp-google-plus a {
+	background-color: rgb(222, 90, 73);
+}
+.oceanwp-social-icons.style-colored li.oceanwp-google-plus a:hover {
+	background-color: rgb(187, 76, 62);
+}
+.oceanwp-social-icons.style-colored li.oceanwp-pinterest a {
+	background-color: rgb(203, 32, 39);
+}
+.oceanwp-social-icons.style-colored li.oceanwp-pinterest a:hover {
+	background-color: rgb(169, 29, 35);
+}
+.oceanwp-social-icons.style-colored li.oceanwp-dribbble a {
+	background-color: rgb(234, 76, 137);
+}
+.oceanwp-social-icons.style-colored li.oceanwp-dribbble a:hover {
+	background-color: rgb(198, 65, 116);
+}
+.oceanwp-social-icons.style-colored li.oceanwp-vk a {
+	background-color: rgb(89, 123, 165);
+}
+.oceanwp-social-icons.style-colored li.oceanwp-vk a:hover {
+	background-color: rgb(72, 99, 132);
+}
+.oceanwp-social-icons.style-colored li.oceanwp-instagram a {
+	background-color: rgb(63, 114, 155);
+}
+.oceanwp-social-icons.style-colored li.oceanwp-instagram a:hover {
+	background-color: rgb(49, 90, 124);
+}
+.oceanwp-social-icons.style-colored li.oceanwp-linkedin a {
+	background-color: rgb(51, 153, 204);
+}
+.oceanwp-social-icons.style-colored li.oceanwp-linkedin a:hover {
+	background-color: rgb(38, 120, 161);
+}
+.oceanwp-social-icons.style-colored li.oceanwp-tumblr a {
+	background-color: rgb(44, 71, 98);
+}
+.oceanwp-social-icons.style-colored li.oceanwp-tumblr a:hover {
+	background-color: rgb(29, 48, 66);
+}
+.oceanwp-social-icons.style-colored li.oceanwp-github a {
+	background-color: rgb(96, 176, 68);
+}
+.oceanwp-social-icons.style-colored li.oceanwp-github a:hover {
+	background-color: rgb(79, 146, 55);
+}
+.oceanwp-social-icons.style-colored li.oceanwp-flickr a {
+	background-color: rgb(250, 64, 134);
+}
+.oceanwp-social-icons.style-colored li.oceanwp-flickr a:hover {
+	background-color: rgb(198, 49, 105);
+}
+.oceanwp-social-icons.style-colored li.oceanwp-skype a {
+	background-color: rgb(0, 175, 240);
+}
+.oceanwp-social-icons.style-colored li.oceanwp-skype a:hover {
+	background-color: rgb(2, 145, 198);
+}
+.oceanwp-social-icons.style-colored li.oceanwp-trello a {
+	background-color: rgb(0, 121, 191);
+}
+.oceanwp-social-icons.style-colored li.oceanwp-trello a:hover {
+	background-color: rgb(0, 121, 191);
+}
+.oceanwp-social-icons.style-colored li.oceanwp-foursquare a {
+	background-color: rgb(45, 91, 227);
+}
+.oceanwp-social-icons.style-colored li.oceanwp-foursquare a:hover {
+	background-color: rgb(45, 91, 227);
+}
+.oceanwp-social-icons.style-colored li.oceanwp-youtube a {
+	background-color: rgb(196, 48, 43);
+}
+.oceanwp-social-icons.style-colored li.oceanwp-youtube a:hover {
+	background-color: rgb(152, 36, 32);
+}
+.oceanwp-social-icons.style-colored li.oceanwp-vimeo a {
+	background-color: rgb(26, 183, 234);
+}
+.oceanwp-social-icons.style-colored li.oceanwp-vimeo a:hover {
+	background-color: rgb(20, 148, 189);
+}
+.oceanwp-social-icons.style-colored li.oceanwp-vine a {
+	background-color: rgb(0, 191, 143);
+}
+.oceanwp-social-icons.style-colored li.oceanwp-vine a:hover {
+	background-color: rgb(1, 144, 108);
+}
+.oceanwp-social-icons.style-colored li.oceanwp-xing a {
+	background-color: rgb(0, 100, 100);
+}
+.oceanwp-social-icons.style-colored li.oceanwp-xing a:hover {
+	background-color: rgb(1, 70, 70);
+}
+.oceanwp-social-icons.style-colored li.oceanwp-yelp a {
+	background-color: rgb(196, 18, 0);
+}
+.oceanwp-social-icons.style-colored li.oceanwp-yelp a:hover {
+	background-color: rgb(148, 15, 1);
+}
+.oceanwp-social-icons.style-colored li.oceanwp-tripadvisor a {
+	background-color: rgb(88, 148, 66);
+}
+.oceanwp-social-icons.style-colored li.oceanwp-tripadvisor a:hover {
+	background-color: rgb(66, 111, 50);
+}
+.oceanwp-social-icons.style-colored li.oceanwp-rss a {
+	background-color: rgb(255, 121, 0);
+}
+.oceanwp-social-icons.style-colored li.oceanwp-rss a:hover {
+	background-color: rgb(212, 102, 3);
+}
+.oceanwp-social-icons.style-colored li.oceanwp-email a {
+	background-color: rgb(19, 175, 240);
+}
+.oceanwp-social-icons.style-colored li.oceanwp-email a:hover {
+	background-color: rgb(15, 141, 194);
+}
+.oceanwp-social-icons.style-simple li {
+	margin: 0px 6px;
+}
+.oceanwp-social-icons.style-simple li a {
+	font-size: 16px;
+}
+.tagcloud a {
+	margin: 0px 2px 5px 0px; padding: 8px 12px; border: 1px solid rgb(233, 233, 233); border-image: none; color: rgb(51, 51, 51); text-transform: uppercase; line-height: 1; letter-spacing: 0.4px; font-size: 12px !important; display: inline-block; background-color: rgb(248, 248, 248);
+}
+.tagcloud a:hover {
+	border-color: rgb(221, 221, 221); color: rgb(51, 51, 51); background-color: rgb(241, 241, 241);
+}
+#sidebar .video-widget .responsive-video-wrap iframe {
+	min-height: 100%;
+}

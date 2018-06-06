@@ -1,3 +1,15 @@
-all images here
+Background:
+https://www.freeimages.com/search/purple-and-blue-abstract-background
 
-in addition background image
+Icon:
+https://www.iconfinder.com/icons/220590/fill_lightning_icon
+
+Icon 2:
+https://www.iconfinder.com/icons/208248/e-mail_envelope_inbox_internet_letter_mail_message_icon
+
+Icon 3:
+https://www.freepik.com/free-icon/male-user-shadow_751026.htm
+
+Layout created from scratch on Elementor
+HTML and JavaScript written on Adobe Dreamweaver
+HTML and JavaScript linked to Python code done on PyCharm

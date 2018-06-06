@@ -3,7 +3,7 @@
 itemscope=""><HEAD><META content="IE=11.0000" http-equiv="X-UA-Compatible">
 	 
 <META charset="UTF-8">	 <LINK href="http://gmpg.org/xfn/11" rel="profile">
-	 <TITLE>Login</TITLE> 
+	 <TITLE>πChat - Plaza</TITLE>
 <META name="viewport" content="width=device-width, initial-scale=1"><LINK href="//fonts.googleapis.com" 
 rel="dns-prefetch"> <LINK href="//s.w.org" rel="dns-prefetch"> <LINK title=" » Feed" 
 href="/" rel="alternate" type="application/rss+xml">
@@ -17,14 +17,11 @@ type="application/rss+xml">
 <script language="JavaScript">
 function includeHTML() {
   var z, i, elmnt, file, xhttp;
-  /*loop through a collection of all HTML elements:*/
   z = document.getElementsByTagName("*");
   for (i = 0; i < z.length; i++) {
     elmnt = z[i];
-    /*search for elements with a certain atrribute:*/
     file = elmnt.getAttribute("w3-include-html");
     if (file) {
-      /*make an HTTP request using the attribute value as the file name:*/
       xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4) {
@@ -36,7 +33,6 @@ function includeHTML() {
       }
       xhttp.open("GET", file, true);
       xhttp.send();
-      /*exit the function:*/
       return;
     }
   }
@@ -50,16 +46,13 @@ function includeHTMLmessages(user) {
     includeHTMLprofile(user)
 
   var z, i, elmnt, file, xhttp;
-  /*loop through a collection of all HTML elements:*/
   z = document.getElementsByTagName("*");
 
   for (i = 0; i < z.length; i++) {
     elmnt = z[i];
-    /*search for elements with a certain atrribute:*/
     file = elmnt.getAttribute("w3-include-html-messages");
 
     if (file) {
-      /*make an HTTP request using the attribute value as the file name:*/
       xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4) {
@@ -85,7 +78,6 @@ function includeHTMLmessages(user) {
 
         localStorage.setItem("previoususer", user);
 
-      /*exit the function:*/
       return;
     }
   }
@@ -96,16 +88,13 @@ function includeHTMLmessages(user) {
 function includeHTMLprofile(user) {
 
   var z, i, elmnt, file, xhttp;
-  /*loop through a collection of all HTML elements:*/
   z = document.getElementsByTagName("*");
 
   for (i = 0; i < z.length; i++) {
     elmnt = z[i];
-    /*search for elements with a certain atrribute:*/
     file = elmnt.getAttribute("w3-include-html-profile");
 
     if (file) {
-      /*make an HTTP request using the attribute value as the file name:*/
       xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4) {
@@ -130,7 +119,6 @@ function includeHTMLprofile(user) {
 
         localStorage.setItem("previoususerprofile", user);
 
-      /*exit the function:*/
       return;
     }
   }
@@ -141,9 +129,17 @@ function includeHTMLprofile(user) {
     <script>
      setInterval(function() {
   includeHTMLmessages();
-  includeHTMLprofile();
+
   includeHTML();
 }, 5000);
+    </script>
+
+    <script>
+     setInterval2(function2() {
+
+  includeHTMLprofile();
+
+}, 20000);
     </script>
 
 
@@ -250,7 +246,7 @@ data-element_type="column" data-id="77b9f29">
 data-element_type="heading.default" data-id="b3bb479">
 <DIV class="elementor-widget-container">
 <H2
-class="elementor-heading-title elementor-size-large"><b>π</b>Chat</H2></DIV></DIV><SECTION
+        class="elementor-heading-title elementor-size-large"><b>π</b>Chat <b><font size = '7'>Plaza</font></b></H2></DIV></DIV><SECTION
 class="elementor-element elementor-element-99877e7 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" 
 data-element_type="section" data-id="99877e7">
 <DIV class="elementor-container elementor-column-gap-default">
@@ -274,6 +270,12 @@ data-element_type="column" data-id="170d86e">
   <input style="background-color:#0073f4" type="submit" value="Refresh">
 </form>
 
+    <br>
+
+    <form action="profileiterate"target="">
+  <input style="background-color:#5300eb" type="submit" value="Update All Profiles">
+</form>
+
 
 </DIV></DIV></DIV>
 <DIV class="elementor-element elementor-element-6e37b25 elementor-column elementor-col-33 elementor-inner-column" 
@@ -281,7 +283,12 @@ data-element_type="column" data-id="6e37b25">
 <DIV class="elementor-column-wrap elementor-element-populated">
 <DIV class="elementor-widget-wrap">
 
-<br><br><font color="white"><center>
+<br>
+
+    <form action="editprofilepage"target=""><center>
+  <input style="background-color:#0073f4" type="submit" value="Edit My Profile">
+</center></form>
+    <br><font color="black"><center>
         <div w3-include-html-profile="/userprofiles/acha932.html"></div>
 </center></font>
 
@@ -325,7 +332,9 @@ data-element_type="form.default" data-id="d7e0f3c">
         <form action="sendFile">
             <DIV class="elementor-field-type-text elementor-field-group elementor-column elementor-field-group-name elementor-col-100 elementor-field-required">
               <input class="elementor-field elementor-size-sm  elementor-field-textual" placeholder="Enter Recipient" aria-required="true" required="required" type="text" name="recipient" value="">
-        <input type='file' id='filename'>
+                     <input class="elementor-field elementor-size-sm  elementor-field-textual" placeholder="Enter File" aria-required="true" required="required" type="text" name="thefile" value="">
+
+
             </DIV><div align="right"><input type="submit" value="Send File"></div>
 </form>
 

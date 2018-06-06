@@ -1,0 +1,519 @@
+.elementor-widget-heading.elementor-widget-heading .elementor-heading-title {
+	color: rgb(110, 193, 228);
+}
+.elementor-widget-heading .elementor-heading-titleelementor-heading-title {
+	font-family: "Raleway", Sans-serif; font-weight: 600;
+}
+.elementor-widget-image .widget-image-caption {
+	color: rgb(122, 122, 122); font-family: "Roboto", Sans-serif; font-weight: 400;
+}
+.elementor-widget-text-editor {
+	color: rgb(122, 122, 122); font-family: "Roboto", Sans-serif; font-weight: 400;
+}
+.elementor-widget-text-editor.elementor-drop-cap-view-stacked .elementor-drop-cap {
+	background-color: rgb(110, 193, 228);
+}
+.elementor-widget-text-editor.elementor-drop-cap-view-framed .elementor-drop-cap {
+	border-color: rgb(110, 193, 228); color: rgb(110, 193, 228);
+}
+.elementor-widget-text-editor.elementor-drop-cap-view-default .elementor-drop-cap {
+	border-color: rgb(110, 193, 228); color: rgb(110, 193, 228);
+}
+.elementor-widget-button a.elementor-button {
+	font-family: "Roboto", Sans-serif; font-weight: 500; background-color: rgb(97, 206, 112);
+}
+.elementor-widget-button .elementor-button {
+	font-family: "Roboto", Sans-serif; font-weight: 500; background-color: rgb(97, 206, 112);
+}
+.elementor-widget-divider .elementor-divider-separator {
+	border-top-color: rgb(122, 122, 122);
+}
+.elementor-widget-image-box .elementor-image-box-content .elementor-image-box-title {
+	color: rgb(110, 193, 228); font-family: "Roboto", Sans-serif; font-weight: 600;
+}
+.elementor-widget-image-box .elementor-image-box-content .elementor-image-box-description {
+	color: rgb(122, 122, 122); font-family: "Roboto", Sans-serif; font-weight: 400;
+}
+.elementor-widget-icon.elementor-view-stacked .elementor-icon {
+	background-color: rgb(110, 193, 228);
+}
+.elementor-widget-icon.elementor-view-framed .elementor-icon {
+	border-color: rgb(110, 193, 228); color: rgb(110, 193, 228);
+}
+.elementor-widget-icon.elementor-view-default .elementor-icon {
+	border-color: rgb(110, 193, 228); color: rgb(110, 193, 228);
+}
+.elementor-widget-icon-box.elementor-view-stacked .elementor-icon {
+	background-color: rgb(110, 193, 228);
+}
+.elementor-widget-icon-box.elementor-view-framed .elementor-icon {
+	border-color: rgb(110, 193, 228); color: rgb(110, 193, 228);
+}
+.elementor-widget-icon-box.elementor-view-default .elementor-icon {
+	border-color: rgb(110, 193, 228); color: rgb(110, 193, 228);
+}
+.elementor-widget-icon-box .elementor-icon-box-content .elementor-icon-box-title {
+	color: rgb(110, 193, 228); font-family: "Roboto", Sans-serif; font-weight: 600;
+}
+.elementor-widget-icon-box .elementor-icon-box-content .elementor-icon-box-description {
+	color: rgb(122, 122, 122); font-family: "Roboto", Sans-serif; font-weight: 400;
+}
+.elementor-widget-image-gallery .gallery-item .gallery-caption {
+	font-family: "Roboto", Sans-serif; font-weight: 500;
+}
+.elementor-widget-image-carousel .elementor-image-carousel-caption {
+	font-family: "Roboto", Sans-serif; font-weight: 500;
+}
+.elementor-widget-icon-list :not(:last-child).elementor-icon-list-item::after {
+	border-color: rgb(122, 122, 122);
+}
+.elementor-widget-icon-list .elementor-icon-list-icon i {
+	color: rgb(110, 193, 228);
+}
+.elementor-widget-icon-list .elementor-icon-list-text {
+	color: rgb(84, 89, 95);
+}
+.elementor-widget-icon-list .elementor-icon-list-item {
+	font-family: "Roboto", Sans-serif; font-weight: 400;
+}
+.elementor-widget-counter .elementor-counter-number-wrapper {
+	color: rgb(110, 193, 228); font-family: "Roboto", Sans-serif; font-weight: 600;
+}
+.elementor-widget-counter .elementor-counter-title {
+	color: rgb(84, 89, 95); font-family: "Roboto Slab", Sans-serif; font-weight: 400;
+}
+.elementor-widget-progress .elementor-progress-wrapper .elementor-progress-bar {
+	background-color: rgb(110, 193, 228);
+}
+.elementor-widget-progress .elementor-title {
+	color: rgb(110, 193, 228); font-family: "Roboto", Sans-serif; font-weight: 400;
+}
+.elementor-widget-testimonial .elementor-testimonial-content {
+	color: rgb(122, 122, 122); font-family: "Roboto", Sans-serif; font-weight: 400;
+}
+.elementor-widget-testimonial .elementor-testimonial-name {
+	color: rgb(110, 193, 228); font-family: "Roboto", Sans-serif; font-weight: 600;
+}
+.elementor-widget-testimonial .elementor-testimonial-job {
+	color: rgb(84, 89, 95); font-family: "Roboto Slab", Sans-serif; font-weight: 400;
+}
+.elementor-widget-tabs .elementor-tab-title {
+	color: rgb(110, 193, 228); font-family: "Roboto", Sans-serif; font-weight: 600;
+}
+.elementor-widget-tabs .elementor-tab-title.elementor-active {
+	color: rgb(97, 206, 112);
+}
+.elementor-widget-tabs .elementor-tab-content {
+	color: rgb(122, 122, 122); font-family: "Roboto", Sans-serif; font-weight: 400;
+}
+.elementor-widget-accordion .elementor-accordion .elementor-tab-title {
+	color: rgb(110, 193, 228); font-family: "Roboto", Sans-serif; font-weight: 600;
+}
+.elementor-widget-accordion .elementor-accordion .elementor-tab-title.elementor-active {
+	color: rgb(97, 206, 112);
+}
+.elementor-widget-accordion .elementor-accordion .elementor-tab-content {
+	color: rgb(122, 122, 122); font-family: "Roboto", Sans-serif; font-weight: 400;
+}
+.elementor-widget-toggle .elementor-toggle .elementor-tab-title {
+	color: rgb(110, 193, 228); font-family: "Roboto", Sans-serif; font-weight: 600;
+}
+.elementor-widget-toggle .elementor-toggle .elementor-tab-title.elementor-active {
+	color: rgb(97, 206, 112);
+}
+.elementor-widget-toggle .elementor-toggle .elementor-tab-content {
+	color: rgb(122, 122, 122); font-family: "Roboto", Sans-serif; font-weight: 400;
+}
+.elementor-widget-alert .elementor-alert-title {
+	font-family: "Roboto", Sans-serif; font-weight: 600;
+}
+.elementor-widget-alert .elementor-alert-description {
+	font-family: "Roboto", Sans-serif; font-weight: 400;
+}
+.elementor-widget-eael-post-grid .eael-entry-title {
+	font-family: "Roboto", Sans-serif; font-weight: 600;
+}
+.elementor-widget-eael-post-grid .eael-grid-post-excerpt p {
+	font-family: "Roboto", Sans-serif; font-weight: 400;
+}
+.elementor-widget-eael-post-grid .eael-entry-meta > div {
+	font-family: "Roboto", Sans-serif; font-weight: 400;
+}
+.elementor-widget-eael-post-timeline .eael-timeline-post-title h2 {
+	font-family: "Roboto", Sans-serif; font-weight: 600;
+}
+.elementor-widget-eael-post-timeline .eael-timeline-post-excerpt p {
+	font-family: "Roboto", Sans-serif; font-weight: 400;
+}
+.elementor-widget-eael-fancy-text .eael-fancy-text-prefix {
+	font-family: "Roboto", Sans-serif; font-weight: 600;
+}
+.elementor-widget-eael-fancy-text .eael-fancy-text-strings {
+	font-family: "Roboto", Sans-serif; font-weight: 600;
+}
+.elementor-widget-eael-fancy-text .typed-cursor {
+	font-family: "Roboto", Sans-serif; font-weight: 600;
+}
+.elementor-widget-eael-fancy-text .eael-fancy-text-suffix {
+	font-family: "Roboto", Sans-serif; font-weight: 600;
+}
+.elementor-widget-eael-creative-button .eael-creative-button {
+	font-family: "Roboto", Sans-serif; font-weight: 600;
+}
+.elementor-widget-eael-countdown .eael-countdown-digits::after {
+	font-family: "Roboto Slab", Sans-serif; font-weight: 400;
+}
+.elementor-widget-eael-countdown .eael-countdown-digits {
+	font-family: "Roboto Slab", Sans-serif; font-weight: 400;
+}
+.elementor-widget-eael-countdown .eael-countdown-label {
+	font-family: "Roboto Slab", Sans-serif; font-weight: 400;
+}
+.elementor-widget-theme-post-title.elementor-widget-heading .elementor-heading-title {
+	color: rgb(110, 193, 228);
+}
+.elementor-widget-theme-post-title .elementor-heading-title {
+	font-family: "Raleway", Sans-serif; font-weight: 600;
+}
+.elementor-widget-theme-post-excerpt .elementor-widget-container {
+	color: rgb(122, 122, 122); font-family: "Roboto", Sans-serif; font-weight: 400;
+}
+.elementor-widget-theme-post-content {
+	color: rgb(122, 122, 122); font-family: "Roboto", Sans-serif; font-weight: 400;
+}
+.elementor-widget-theme-post-featured-image .widget-image-caption {
+	color: rgb(122, 122, 122); font-family: "Roboto", Sans-serif; font-weight: 400;
+}
+.elementor-widget-theme-archive-title.elementor-widget-heading .elementor-heading-title {
+	color: rgb(110, 193, 228);
+}
+.elementor-widget-theme-archive-title .elementor-heading-title {
+	font-family: "Raleway", Sans-serif; font-weight: 600;
+}
+.elementor-widget-archive-posts .elementor-post__title {
+	color: rgb(84, 89, 95); font-family: "Roboto", Sans-serif; font-weight: 600;
+}
+.elementor-widget-archive-posts .elementor-post__title a {
+	color: rgb(84, 89, 95); font-family: "Roboto", Sans-serif; font-weight: 600;
+}
+.elementor-widget-archive-posts .elementor-post__meta-data {
+	font-family: "Roboto Slab", Sans-serif; font-weight: 400;
+}
+.elementor-widget-archive-posts .elementor-post__excerpt p {
+	font-family: "Roboto", Sans-serif; font-weight: 400;
+}
+.elementor-widget-archive-posts .elementor-post__read-more {
+	color: rgb(97, 206, 112); font-family: "Roboto", Sans-serif; font-weight: 500;
+}
+.elementor-widget-archive-posts .elementor-post__card .elementor-post__badge {
+	font-family: "Roboto", Sans-serif; font-weight: 500; background-color: rgb(97, 206, 112);
+}
+.elementor-widget-archive-posts .elementor-pagination {
+	font-family: "Roboto Slab", Sans-serif; font-weight: 400;
+}
+.elementor-widget-archive-posts .elementor-posts-nothing-found {
+	color: rgb(122, 122, 122); font-family: "Roboto", Sans-serif; font-weight: 400;
+}
+.elementor-widget-theme-site-title.elementor-widget-heading .elementor-heading-title {
+	color: rgb(110, 193, 228);
+}
+.elementor-widget-theme-site-title .elementor-heading-title {
+	font-family: "Raleway", Sans-serif; font-weight: 600;
+}
+.elementor-widget-theme-site-logo .widget-image-caption {
+	color: rgb(122, 122, 122); font-family: "Roboto", Sans-serif; font-weight: 400;
+}
+.elementor-widget-posts .elementor-post__title {
+	color: rgb(84, 89, 95); font-family: "Roboto", Sans-serif; font-weight: 600;
+}
+.elementor-widget-posts .elementor-post__title a {
+	color: rgb(84, 89, 95); font-family: "Roboto", Sans-serif; font-weight: 600;
+}
+.elementor-widget-posts .elementor-post__meta-data {
+	font-family: "Roboto Slab", Sans-serif; font-weight: 400;
+}
+.elementor-widget-posts .elementor-post__excerpt p {
+	font-family: "Roboto", Sans-serif; font-weight: 400;
+}
+.elementor-widget-posts .elementor-post__read-more {
+	color: rgb(97, 206, 112); font-family: "Roboto", Sans-serif; font-weight: 500;
+}
+.elementor-widget-posts .elementor-post__card .elementor-post__badge {
+	font-family: "Roboto", Sans-serif; font-weight: 500; background-color: rgb(97, 206, 112);
+}
+.elementor-widget-posts .elementor-pagination {
+	font-family: "Roboto Slab", Sans-serif; font-weight: 400;
+}
+.elementor-widget-portfolio a .elementor-portfolio-item__overlay {
+	background-color: rgb(97, 206, 112);
+}
+.elementor-widget-portfolio .elementor-portfolio-item__title {
+	font-family: "Roboto", Sans-serif; font-weight: 600;
+}
+.elementor-widget-portfolio .elementor-portfolio__filter {
+	color: rgb(122, 122, 122); font-family: "Roboto", Sans-serif; font-weight: 600;
+}
+.elementor-widget-portfolio .elementor-portfolio__filter.elementor-active {
+	color: rgb(110, 193, 228);
+}
+.elementor-widget-slides .elementor-slide-heading {
+	font-family: "Roboto", Sans-serif; font-weight: 600;
+}
+.elementor-widget-slides .elementor-slide-description {
+	font-family: "Roboto Slab", Sans-serif; font-weight: 400;
+}
+.elementor-widget-slides .elementor-slide-button {
+	font-family: "Roboto", Sans-serif; font-weight: 500;
+}
+.elementor-widget-form .elementor-field-group > label {
+	color: rgb(122, 122, 122);
+}
+.elementor-widget-form .elementor-field-subgroup label {
+	color: rgb(122, 122, 122);
+}
+.elementor-widget-form .elementor-field-group > label {
+	font-family: "Roboto", Sans-serif; font-weight: 400;
+}
+.elementor-widget-form .elementor-field-group .elementor-field {
+	color: rgb(122, 122, 122);
+}
+.elementor-widget-form .elementor-field-group .elementor-field {
+	font-family: "Roboto", Sans-serif; font-weight: 400;
+}
+.elementor-widget-form .elementor-field-subgroup label {
+	font-family: "Roboto", Sans-serif; font-weight: 400;
+}
+.elementor-widget-form .elementor-button {
+	font-family: "Roboto", Sans-serif; font-weight: 500; background-color: rgb(97, 206, 112);
+}
+.elementor-widget-login .elementor-field-group > a {
+	color: rgb(122, 122, 122);
+}
+.elementor-widget-login .elementor-field-group > a:hover {
+	color: rgb(97, 206, 112);
+}
+.elementor-widget-login .elementor-form-fields-wrapper {
+	color: rgb(122, 122, 122); font-family: "Roboto", Sans-serif; font-weight: 400;
+}
+.elementor-widget-login .elementor-field-group .elementor-field {
+	color: rgb(122, 122, 122);
+}
+.elementor-widget-login .elementor-field-group .elementor-field {
+	font-family: "Roboto", Sans-serif; font-weight: 400;
+}
+.elementor-widget-login .elementor-field-subgroup label {
+	font-family: "Roboto", Sans-serif; font-weight: 400;
+}
+.elementor-widget-login .elementor-button {
+	font-family: "Roboto", Sans-serif; font-weight: 500; background-color: rgb(97, 206, 112);
+}
+.elementor-widget-nav-menu .elementor-nav-menu--main {
+	font-family: "Roboto", Sans-serif; font-weight: 600;
+}
+.elementor-widget-nav-menu .elementor-nav-menu--main .elementor-item {
+	color: rgb(122, 122, 122);
+}
+.elementor-widget-nav-menu .elementor-nav-menu--main .elementor-item:hover {
+	color: rgb(97, 206, 112);
+}
+.elementor-widget-nav-menu .elementor-nav-menu--main .elementor-item.elementor-item-active {
+	color: rgb(97, 206, 112);
+}
+.elementor-widget-nav-menu .elementor-nav-menu--main .elementor-item.highlighted {
+	color: rgb(97, 206, 112);
+}
+.elementor-widget-nav-menu .elementor-nav-menu--main .elementor-item:focus {
+	color: rgb(97, 206, 112);
+}
+.elementor-widget-nav-menu :not(.e--pointer-framed).elementor-nav-menu--main .elementor-item::before {
+	background-color: rgb(97, 206, 112);
+}
+.elementor-widget-nav-menu :not(.e--pointer-framed).elementor-nav-menu--main .elementor-item::after {
+	background-color: rgb(97, 206, 112);
+}
+.elementor-widget-nav-menu .e--pointer-framed .elementor-item::before {
+	border-color: rgb(97, 206, 112);
+}
+.elementor-widget-nav-menu .e--pointer-framed .elementor-item::after {
+	border-color: rgb(97, 206, 112);
+}
+.elementor-widget-nav-menu .elementor-nav-menu--dropdown {
+	font-family: "Roboto", Sans-serif; font-weight: 500;
+}
+.elementor-widget-animated-headline .elementor-headline-dynamic-wrapper path {
+	stroke: #61ce70;
+}
+.elementor-widget-animated-headline .elementor-headline-plain-text {
+	color: rgb(84, 89, 95);
+}
+.elementor-widget-animated-headline .elementor-headline {
+	font-family: "Roboto", Sans-serif; font-weight: 600;
+}
+.elementor-widget-animated-headline .elementor-headline-dynamic-text {
+	color: rgb(84, 89, 95); font-family: "Roboto", Sans-serif; font-weight: 600;
+}
+.elementor-widget-price-list .elementor-price-list-header {
+	color: rgb(110, 193, 228); font-family: "Roboto", Sans-serif; font-weight: 600;
+}
+.elementor-widget-price-list .elementor-price-list-description {
+	color: rgb(122, 122, 122); font-family: "Roboto", Sans-serif; font-weight: 400;
+}
+.elementor-widget-price-list .elementor-price-list-separator {
+	border-bottom-color: rgb(84, 89, 95);
+}
+.elementor-widget-price-table .elementor-price-table__header {
+	background-color: rgb(84, 89, 95);
+}
+.elementor-widget-price-table .elementor-price-table__heading {
+	font-family: "Roboto", Sans-serif; font-weight: 600;
+}
+.elementor-widget-price-table .elementor-price-table__subheading {
+	font-family: "Roboto Slab", Sans-serif; font-weight: 400;
+}
+.elementor-widget-price-table .elementor-price-table__price {
+	font-family: "Roboto", Sans-serif; font-weight: 600;
+}
+.elementor-widget-price-table .elementor-price-table__original-price {
+	color: rgb(84, 89, 95); font-family: "Roboto", Sans-serif; font-weight: 600;
+}
+.elementor-widget-price-table .elementor-price-table__period {
+	color: rgb(84, 89, 95); font-family: "Roboto Slab", Sans-serif; font-weight: 400;
+}
+.elementor-widget-price-table .elementor-price-table__features-list {
+	color: rgb(122, 122, 122);
+}
+.elementor-widget-price-table .elementor-price-table__features-list li {
+	font-family: "Roboto", Sans-serif; font-weight: 400;
+}
+.elementor-widget-price-table .elementor-price-table__features-list li::before {
+	border-top-color: rgb(122, 122, 122);
+}
+.elementor-widget-price-table .elementor-price-table__button {
+	font-family: "Roboto", Sans-serif; font-weight: 500; background-color: rgb(97, 206, 112);
+}
+.elementor-widget-price-table .elementor-price-table__additional_info {
+	color: rgb(122, 122, 122); font-family: "Roboto", Sans-serif; font-weight: 400;
+}
+.elementor-widget-price-table .elementor-price-table__ribbon-inner {
+	font-family: "Roboto", Sans-serif; font-weight: 500; background-color: rgb(97, 206, 112);
+}
+.elementor-widget-flip-box .elementor-flip-box__front .elementor-flip-box__layer__title {
+	font-family: "Roboto", Sans-serif; font-weight: 600;
+}
+.elementor-widget-flip-box .elementor-flip-box__front .elementor-flip-box__layer__description {
+	font-family: "Roboto", Sans-serif; font-weight: 400;
+}
+.elementor-widget-flip-box .elementor-flip-box__back .elementor-flip-box__layer__title {
+	font-family: "Roboto", Sans-serif; font-weight: 600;
+}
+.elementor-widget-flip-box .elementor-flip-box__back .elementor-flip-box__layer__description {
+	font-family: "Roboto", Sans-serif; font-weight: 400;
+}
+.elementor-widget-flip-box .elementor-flip-box__button {
+	font-family: "Roboto", Sans-serif; font-weight: 500;
+}
+.elementor-widget-call-to-action .elementor-cta__title {
+	font-family: "Roboto", Sans-serif; font-weight: 600;
+}
+.elementor-widget-call-to-action .elementor-cta__description {
+	font-family: "Roboto", Sans-serif; font-weight: 400;
+}
+.elementor-widget-call-to-action .elementor-cta__button {
+	font-family: "Roboto", Sans-serif; font-weight: 500;
+}
+.elementor-widget-call-to-action .elementor-ribbon-inner {
+	font-family: "Roboto", Sans-serif; font-weight: 500; background-color: rgb(97, 206, 112);
+}
+.elementor-widget-media-carousel .elementor-carousel-image-overlay {
+	font-family: "Roboto", Sans-serif; font-weight: 500;
+}
+.elementor-widget-testimonial-carousel .elementor-testimonial__text {
+	color: rgb(122, 122, 122); font-family: "Roboto", Sans-serif; font-weight: 400;
+}
+.elementor-widget-testimonial-carousel .elementor-testimonial__name {
+	color: rgb(122, 122, 122); font-family: "Roboto", Sans-serif; font-weight: 600;
+}
+.elementor-widget-testimonial-carousel .elementor-testimonial__title {
+	color: rgb(110, 193, 228); font-family: "Roboto Slab", Sans-serif; font-weight: 400;
+}
+.elementor-widget-countdown .elementor-countdown-item {
+	background-color: rgb(110, 193, 228);
+}
+.elementor-widget-countdown .elementor-countdown-digits {
+	font-family: "Roboto", Sans-serif; font-weight: 400;
+}
+.elementor-widget-countdown .elementor-countdown-label {
+	font-family: "Roboto Slab", Sans-serif; font-weight: 400;
+}
+.elementor-widget-search-form input[type='search'].elementor-search-form__input {
+	font-family: "Roboto", Sans-serif; font-weight: 400;
+}
+.elementor-widget-search-form .elementor-search-form__input {
+	color: rgb(122, 122, 122);
+}
+.elementor-widget-search-form .elementor-search-form__icon {
+	color: rgb(122, 122, 122);
+}
+.elementor-widget-search-form .elementor-lightbox .dialog-lightbox-close-button {
+	color: rgb(122, 122, 122);
+}
+.elementor-widget-search-form .elementor-lightbox .dialog-lightbox-close-button:hover {
+	color: rgb(122, 122, 122);
+}
+.elementor-widget-search-form.elementor-search-form--skin-full_screen input[type='search'].elementor-search-form__input {
+	color: rgb(122, 122, 122);
+}
+.elementor-widget-search-form .elementor-search-form__submit {
+	font-family: "Roboto", Sans-serif; font-weight: 400; background-color: rgb(84, 89, 95);
+}
+.elementor-widget-author-box .elementor-author-box__name {
+	color: rgb(84, 89, 95); font-family: "Roboto", Sans-serif; font-weight: 600;
+}
+.elementor-widget-author-box .elementor-author-box__bio {
+	color: rgb(122, 122, 122); font-family: "Roboto", Sans-serif; font-weight: 400;
+}
+.elementor-widget-author-box .elementor-author-box__button {
+	border-color: rgb(84, 89, 95); color: rgb(84, 89, 95); font-family: "Roboto", Sans-serif; font-weight: 500;
+}
+.elementor-widget-author-box .elementor-author-box__button:hover {
+	border-color: rgb(84, 89, 95); color: rgb(84, 89, 95);
+}
+.elementor-widget-post-navigation span.post-navigation__prev--label {
+	color: rgb(122, 122, 122);
+}
+.elementor-widget-post-navigation span.post-navigation__next--label {
+	color: rgb(122, 122, 122);
+}
+.elementor-widget-post-navigation span.post-navigation__prev--label {
+	font-family: "Roboto Slab", Sans-serif; font-weight: 400;
+}
+.elementor-widget-post-navigation span.post-navigation__next--label {
+	font-family: "Roboto Slab", Sans-serif; font-weight: 400;
+}
+.elementor-widget-post-navigation span.post-navigation__prev--title {
+	color: rgb(84, 89, 95); font-family: "Roboto Slab", Sans-serif; font-weight: 400;
+}
+.elementor-widget-post-navigation span.post-navigation__next--title {
+	color: rgb(84, 89, 95); font-family: "Roboto Slab", Sans-serif; font-weight: 400;
+}
+.elementor-widget-post-info :not(:last-child).elementor-icon-list-item::after {
+	border-color: rgb(122, 122, 122);
+}
+.elementor-widget-post-info .elementor-icon-list-icon i {
+	color: rgb(110, 193, 228);
+}
+.elementor-widget-post-info .elementor-icon-list-text {
+	color: rgb(84, 89, 95);
+}
+.elementor-widget-post-info .elementor-icon-list-text a {
+	color: rgb(84, 89, 95);
+}
+.elementor-widget-post-info .elementor-icon-list-item {
+	font-family: "Roboto", Sans-serif; font-weight: 400;
+}
+.elementor-widget-blockquote .elementor-blockquote__content {
+	color: rgb(122, 122, 122);
+}
+.elementor-widget-blockquote .elementor-blockquote__author {
+	color: rgb(84, 89, 95);
+}
