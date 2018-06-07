@@ -1,0 +1,4 @@
+The server has SMS two factor authentication implemented for the user 'gxu630' for a specific phone number
+This value can be changed in the code for testing or reusability purposes
+Alternatively, two factor authentication can be disabled from within the code by changing the username detection parameter.
+

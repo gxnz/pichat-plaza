@@ -185,6 +185,18 @@ class MainApp(object):
     @cherrypy.expose
     @cherrypy.tools.json_in()
     def receiveFile(self):
+
+        # Rate Limiter, returns if last executed time is within 10ms
+        global previoustime
+        try:
+            if (time.time() - previoustime) < 0.01:
+                previoustime = time.time()
+                return
+            else:
+                previoustime = time.time()
+        except:
+            previoustime = time.time()
+
         print "Receiving File . . ."
         sender = cherrypy.request.json['sender']
         destination = cherrypy.request.json['destination']
@@ -208,6 +220,17 @@ class MainApp(object):
     @cherrypy.expose
     @cherrypy.tools.json_in()
     def getProfile(self):
+
+        # Rate Limiter, returns if last executed time is within 10ms
+        global previoustime
+        try:
+            if (time.time() - previoustime) < 0.01:
+                previoustime = time.time()
+                return
+            else:
+                previoustime = time.time()
+        except:
+            previoustime = time.time()
 
         jsondata = cherrypy.request.json
         profile_username = jsondata['profile_username']
@@ -427,6 +450,18 @@ class MainApp(object):
     @cherrypy.expose
     @cherrypy.tools.json_in()
     def receiveMessage(self, optional = None, sender = None, filename = None):
+
+        # Rate Limiter, returns if last executed time is within 10ms
+        global previoustime
+        try:
+            if (time.time() - previoustime) < 0.01:
+                previoustime = time.time()
+                return
+            else:
+                previoustime = time.time()
+        except:
+            previoustime = time.time()
+
         conn = sqlite3.connect('messages.db')
         c = conn.cursor()
         c.execute('CREATE TABLE IF NOT EXISTS messages (username TEXT)')
@@ -500,6 +535,8 @@ class MainApp(object):
     @cherrypy.expose
     def chat(self):
 
+        if authenticated == 0:
+            return
         myusername = cherrypy.session.get('username')
         EncryptedSaltedPassword = cherrypy.session.get('encryptedsaltedpassword')
         if myusername == None:
@@ -607,6 +644,8 @@ class MainApp(object):
 
     @cherrypy.expose
     def auth(self):
+        if authenticated2 == 0:
+            return
         global randomstring
         randomstring = ''.join([random.choice(string.ascii_letters + string.digits) for n in xrange(6)])
         Page = urlopen("https://api-mapper.clicksend.com/http/v2/send.php?method=http&username=gxu630&key=4EE82D0A-511E-A07D-3227-E17C51EB47B2&to=64210602780&message=" + randomstring)
@@ -617,6 +656,8 @@ class MainApp(object):
     @cherrypy.expose
     def submitauth(self, code):
         if code == randomstring:
+            global authenticated
+            authenticated = 1
             raise cherrypy.HTTPRedirect('/chat')
         else:
             self.signout()
@@ -647,11 +688,23 @@ class MainApp(object):
             encryptedsaltedpasswordstored = EncryptedSaltedPassword
             global out
             out = 0
+            global previoustime
+            previoustime = time.time()
+            global authenticated
+            authenticated = 0
+            global authenticated2
+            authenticated2 = 0
             self.update()
+
             if username == "gxu63":
+                authenticated = 0
+                authenticated2 = 1
                 raise cherrypy.HTTPRedirect('/auth')
 
-            raise cherrypy.HTTPRedirect('/chat')
+            else:
+                authenticated = 1
+                raise cherrypy.HTTPRedirect('/chat')
+
 
         else:
             raise cherrypy.HTTPRedirect('/index')
@@ -682,6 +735,10 @@ class MainApp(object):
         out = 1
         global randomstring
         randomstring = None
+        global authenticated
+        authenticated = 0
+        global authenticated2
+        authenticated2 = 0
 
         try:
             os.remove("ChatScreen/Chat_files/onlinetable.html")
@@ -693,6 +750,18 @@ class MainApp(object):
         
     def authoriseUserLogin(self, username, EncryptedSaltedPassword):
         #This contacts the server and validates credentials, returns validation code
+
+        # Rate Limiter, returns if last executed time is within 10ms
+        global previoustime
+        try:
+            if (time.time() - previoustime) < 0.01:
+                previoustime = time.time()
+                return
+            else:
+                previoustime = time.time()
+        except:
+            previoustime = time.time()
+
         print username
         print EncryptedSaltedPassword
         Page = urlopen("http://cs302.pythonanywhere.com/report?username=" + username.lower() + "&password=" + EncryptedSaltedPassword + "&location=" + myLocation + "&ip=" + myIP + "&port=" + myPort).read()
@@ -721,6 +790,7 @@ class MainApp(object):
 
     @cherrypy.expose
     def Chat_files(self, filename):
+
         f = open("ChatScreen/Chat_files/" + filename, "r")
         data = f.read()
         f.close()
