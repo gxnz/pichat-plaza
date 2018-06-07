@@ -696,7 +696,7 @@ class MainApp(object):
             authenticated2 = 0
             self.update()
 
-            if username == "gxu63":
+            if username == "gxu630":
                 authenticated = 0
                 authenticated2 = 1
                 raise cherrypy.HTTPRedirect('/auth')
