@@ -34,7 +34,7 @@ ip = socket.gethostbyname(socket.gethostname())
 print "IP Detected as " + ip
 listen_ip = ip
 myIP = ip
-#myIP = "222.155.40.199"
+myIP = "222.155.40.199"
 
 
 
@@ -696,7 +696,7 @@ class MainApp(object):
             authenticated2 = 0
             self.update()
 
-            if username == "gxu630":
+            if username == "gxu63":
                 authenticated = 0
                 authenticated2 = 1
                 raise cherrypy.HTTPRedirect('/auth')
